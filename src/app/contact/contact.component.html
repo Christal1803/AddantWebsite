@@ -1,0 +1,110 @@
+<!--Contact section starts-->
+<div class="container-fluid contact-container mt-5">
+  <div class="row mt-lg-5">
+    <!--contact page left section starts-->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <!--contact page map image starts-->
+      <a href="https://goo.gl/maps/UFuSEiiDhQJefUNb8"><img src="assets/img/contact/world.svg" class="img-fluid" /></a>
+      <!--contact page map image ends-->
+      <div class="row">
+        <div class="col-sm pb-3">
+          <a class="carrerlinks" href="https://goo.gl/maps/UFuSEiiDhQJefUNb8">
+            <img src="assets/img/contact/address.svg" class="img-fluid" alt="world map image"> <b>India</b>
+            <div class="row contact-details">
+              <p>2707, Yamuna, Technopark Phase - III, Trivandrum, Kerala, India - 695583</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a class="carrerlinks" href="mailto:info@addant.com">
+            <img src="assets/img/contact/mail.svg" class="img-fluid"> <b>Email</b>
+            <div class="row contact-details ">
+              <p>info@addant.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <img src="assets/img/contact/call.svg" class="img-fluid"> <b>Contact</b>
+          <div class="row contact-details">
+            <a class="carrerlinks" href="tel:8113902838"> <p>+91 8113902838</p> </a>
+            <a class="carrerlinks" href="tel:+1 702-241-6248"> <p>+1 702-241-6248</p></a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <a class="carrerlinks">
+            <img src="assets/img/contact/mail.svg" class="img-fluid" style="visibility:hidden"> <b>Get Connected</b>
+            <div class="row contact-details ">
+            </div>
+          </a>
+          <div class="row contact-details mt-sm-2 d-inline" style=" vertical-align: sub">
+            <a href="https://www.facebook.com/AddantSystems" target="_blank"><i class='fab fa-facebook contact-socialmedia' style=" color: black;"></i></a>
+            <a href="https://www.youtube.com/channel/UCMPNjxawlQ00Ny9o0J7bTSA" target="_blank"><i class="fa-brands fa-youtube contact-socialmedia" style=" color: black; font-size: 23px;"></i></a>
+            <a href="https://www.instagram.com/addantlife/" target="_blank"><i class='fab fa-instagram contact-socialmedia' style=" color: black;"></i></a>
+            <a href="https://in.linkedin.com/company/addant-systems" target="_blank"><i class='fab fa-linkedin contact-socialmedia' style=" color: black;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--contact page left section ends-->
+    <!--contact page right section starts-->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <h3 class="contact-heading2 mt-4">Get in touch </h3>
+      <!--contact page form starts-->
+      <form class="requires-validation" [formGroup]="enquiryForm">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-6 pl-0">
+              <label>First Name</label>
+              <input class="form-control" type="text" name="first_name" placeholder="" formControlName="first_name" required
+                      [ngClass]="{ 'is-invalid': currentForm.first_name.touched && currentForm.first_name.invalid}">
+            </div>
+            <div class="col-6 pr-0">
+              <label>Last Name</label>
+              <input class="form-control" type="text" name="last_name" placeholder="" formControlName="last_name" required
+                      [ngClass]="{ 'is-invalid': currentForm.last_name.touched && currentForm.last_name.invalid}">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-6 pl-0">
+              <label> Email</label>
+              <input class="form-control" type="email" name="email" placeholder="" formControlName="email" required
+                      [ngClass]="{ 'is-invalid': currentForm.email.touched && currentForm.email.invalid}">
+            </div>
+            <div class="col-6 pr-0">
+              <label>Mobile Number</label>
+              <input class="form-control" type="mob" name="mobile" placeholder="" formControlName="mobile"
+                      [ngClass]="{ 'is-invalid': currentForm.mobile.touched && currentForm.mobile.invalid}">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 pl-0 pr-0">
+          <label>Type your subject</label>
+          <input class="form-control" type="text" name="subject" placeholder="" required formControlName="subject"
+                  [ngClass]="{ 'is-invalid': currentForm.subject.touched && currentForm.subject.invalid}">
+        </div>
+        <div class="col-md-12 pl-0 pr-0">
+          <label>Type your message</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" formControlName="message"></textarea>
+        </div>
+        <div class="col-md-12 mt-3 mb-5 pl-0 pr-0">
+          <div class="alert alert-success alert-dismissible fade show" id="alert" role="alert"
+               style="display:none">
+            <strong>We have received your application!</strong> we will get back to you soon.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <button class="btn contact-submit" (click)="saveEnquiry()">Submit</button>
+        </div>
+      </form>
+      <!--contact page form ends-->
+    </div>
+    <!--contact page right section ends-->
+  </div>
+</div>
+
+<!--contact section ends-->

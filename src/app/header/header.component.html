@@ -1,0 +1,97 @@
+<div class="container">
+  <!--Navbar starts-->
+  <nav class="navbar-expand-lg navbar-dark fixed-top">
+    <div class="wrapper">
+      <!--Addant logo in navbar starts-->
+      <div class="logo"><a href="/home"><img class="navbar-brand-img" src="./assets/img/addantlogowhite1.svg" alt="Addant logo"></a></div>
+      <!--Addant logo in navbar enda-->
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <!--navbar lists starts-->
+      <ul class="nav-links justify-content-end ">
+        <!--mobile view close btn starts-->
+        <label for="close-btn" class="btn close-btn"><img src="./assets/img/close.svg"></label>
+        <!--mobile view close btn starts-->
+        <!--services list starts-->
+        <li>
+           <!--services heading starts-->
+          <div class="desktop-item">Services <span class="dot"><img class="dotimg" src="./assets/img/whitedot.svg"></span></div>
+           <!--services heading ends-->
+          <input type="checkbox" id="showDrop">
+          <!--services heading in mobile view starts-->
+          <label for="showDrop" class="mobile-item services">Services<img src="./assets/img/downarrow.svg"></label>
+          <!--services heading in mobile view ends-->
+          <!--services dropdown starts-->
+          <ul class="drop-menu row">
+            <div class="col-lg-6 col-sm-12">
+              <li><a routerLink="/expertise/kisoktouchscreen">Kiosk &amp; Touchscreen</a></li>
+              <li><a routerLink="/expertise/mobileapplications">Mobile Applications</a></li>
+              <li><a routerLink="/expertise/webapplications">Web Applications</a></li>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <li><a routerLink="/expertise/cloudsolutions">Cloud Solutions</a></li>
+              <li><a routerLink="/expertise/desktopapplications">Desktop Applications</a></li>
+              <li><a routerLink="/expertise/datascienceandengineering">Data Science and Engineering</a></li>
+            </div>
+            <div class="col-12">
+              <li><a routerLink="/expertise" class="seeall">See all <i class="fa-solid fa-arrow-right"></i> </a></li>
+            </div>
+          </ul>
+        <!--services dropdown ends-->
+        </li>
+      <!-- services list ends-->
+          <!--Solutions list starts-->
+            <li>
+              <!--solutions heading starts-->
+              <div class="desktop-item">Solutions <span class="dot"><img class="dotimg" src="./assets/img/whitedot.svg"></span></div>
+              <!--solutions heading ends-->
+              <input type="checkbox" id="showDrop1">
+               <!--solutions heading in mobile view starts-->
+              <label for="showDrop1" class="mobile-item services">Solutions  <img src="./assets/img/downarrow.svg"></label>
+               <!--solutions heading in mobile view ends-->
+               <!--services dropdown starts-->
+              <ul class="drop-menu row">
+                <div class="col-lg-4 col-sm-12">
+                  <header onclick="window.location='./smartcityplatform.html';" class="text-dark font-weight-bold" style="font-size: 16px;">Smart Service Platform</header>
+                  <li><a href="./horizonplatform.html">Horizon</a></li>
+                  <li><a href="./multiservicekisok.html">Multi Service Kiosk</a></li>
+                  <li><a href="./parkingcashierterminal.html">Parking Cashier Terminal</a></li>
+                </div>
+
+                <div class="col-lg-4 col-sm-12">
+                  <header onclick="window.location='./casinogamingsystem.html';" style="font-size: 16px;">Casino Management System</header>
+                  <li><a href="./floorassistantapp.html">Floor Assistant</a></li>
+                  <li><a href="./playerapp.html">Player App</a></li>
+                  <li><a href="./playertrackingmodule.html">Player Tracking</a></li>
+                </div>
+
+                <div class="col-lg-4 col-sm-12">
+                  <header onclick="window.location='./hospitalitymanagement.html';" style="font-size: 16px;">Hospitality Management</header>
+                  <li><a href="./ALICEreceptionist.html">ALICE Receptionist</a></li>
+                  <li><a href="./ALICEvisitor.html">ALICE Visitor Management</a></li>
+                  <li><a href="./ALICEadmin.html">ALICE Admin</a></li>
+                </div>
+
+                <div class="col-12">
+                  <li><a routerLink="/solutions" class="seeall">See all <i class="fa-solid fa-arrow-right"></i> </a></li>
+                </div>
+              </ul>
+            <!--services dropdown ends-->
+            </li>
+          <!--Solutions list ends-->
+          <!--About us list starts-->
+            <li><a routerLink="/aboutus" class="navlink-items">About us <span class="dot"><img class="dotimg" src="./assets/img/whitedot.svg"></span></a></li>
+           <!--About us list ends-->
+          <!--Contact list starts-->
+            <li><a routerLink="/contact" class="navlink-items mycontact">Contact <span class="dot"><img class="dotimg" src="./assets/img/whitedot.svg"></span></a></li>
+          <!--Contact list ends-->
+           </ul>
+          <!--navbar items ends-->
+          <!--Toggle button for mobile view starts-->
+            <label for="menu-btn" class="btn menu-btn"><img src="./assets/img/mobilenavtogglewhite.svg" class="mobilenavtoggle"></label>
+          <!--Toggle button for mobile view ends-->
+    </div>
+  </nav>
+  <!--Navbar ends-->
+</div>
+

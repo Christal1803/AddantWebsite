@@ -1,0 +1,383 @@
+@media only screen and (max-width: 480px) {
+  :host ::ng-deep .owl-item {
+    padding: 0.6rem !important;
+  }
+}
+
+:host ::ng-deep .owl-item {
+  padding: 1.5rem;
+}
+  .col-md-4.col-lg-4.col-xl-3.mb-sm-0.mb-lg-4.mb-md-0 {
+    text-align: left;
+  }
+
+  .card-body ul li {
+    list-style: unset;
+  }
+
+  div#accordionExample {
+    padding: 20px;
+    background: #FCFCFC;
+  }
+
+  .card-header {
+    border-bottom: 0px;
+  }
+
+  .applynowbtn {
+    width: 145px;
+    height: 47px;
+    color: #fff;
+    background: #0EC79B;
+    border-radius: 2px;
+    border: 0px;
+    margin-top: 25px;
+  }
+
+    .applynowbtn a:hover {
+      color: #fff;
+    }
+
+  .accordion .card {
+    box-shadow: none;
+    padding-bottom: 20px;
+  }
+
+  .demo {
+    margin: 20px;
+  }
+
+  .accordion .fa {
+    margin-right: 0.5rem;
+  }
+
+  .accordion button,
+  .accordion button:hover,
+  .accordion button:focus {
+    text-decoration: none;
+  }
+
+  .testimonial {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #3d5a80;
+  }
+
+  .testimonial_box-top {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0px 4px 30px rgb(132 132 132 / 8%);
+    height: 420px;
+  }
+
+  .testimonial_box-icon {
+    padding: 10px 0;
+  }
+
+    .testimonial_box-icon i {
+      font-size: 25px;
+      color: #14213d;
+    }
+
+  .testimonial_box-text {
+    padding: 10px 0;
+  }
+
+    .testimonial_box-text p {
+      color: #293241;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 0;
+    }
+
+  .testimonial_box-img {
+    padding: 20px 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+    .testimonial_box-img img {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      border: 2px solid #e5e5e5;
+    }
+
+  .testimonial_box-name {
+    padding-top: 10px;
+  }
+
+    .testimonial_box-name h4 {
+      font-size: 20px;
+      line-height: 25px;
+      color: #293241;
+      margin-bottom: 0;
+    }
+
+  .testimonial_box-job p {
+    color: #293241;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 20px;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 2px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+
+
+
+
+  @media only screen and (max-width: 768px) {
+    .carrer-mainsection {
+      padding: 0px 27px !important;
+    }
+  }
+
+  .modal-close {
+    border-radius: 50%;
+    background: #0ec79b;
+    border: 0px;
+    color: #fff;
+  }
+
+  .modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.6rem;
+  }
+
+  .modal-header {
+    padding: 1rem 1.6rem;
+  }
+
+  .applybtn {
+    width: 100%;
+    background: #0ec79b;
+    padding: 11px;
+    color: #fff;
+    border: 0px;
+  }
+
+    .applybtn:hover {
+      width: 100%;
+      background: #0ec79b;
+      padding: 11px;
+      color: #fff;
+    }
+
+  .modal-body .panel input:focus {
+    outline: none !important;
+    ;
+  }
+
+  .carrer-mainsection {
+    padding: 0px 100px;
+  }
+
+  div#accordion-list-1 ul li {
+    padding: 0px;
+  }
+
+  div#accordion-list-2 ul li {
+    padding: 0px;
+  }
+
+  div#accordion-list-3 ul li {
+    padding: 0px;
+  }
+
+  div#accordion-list-4 ul li {
+    padding: 0px;
+  }
+
+  div#accordion-list-5 ul li {
+    padding: 0px;
+  }
+
+  div#accordion-list-6 ul li {
+    padding: 0px;
+  }
+
+  .carrer-collapse {
+    background: #F8F8F8;
+    padding: 0;
+  }
+
+  .collapse-content {
+    padding: 20px;
+  }
+
+  .collapse ul li {
+    list-style: disc;
+  }
+
+  .collapse-content p:hover {
+    color: black;
+  }
+
+  .career .accordion-lists {
+    padding: 30px;
+  }
+
+    .career .accordion-lists ul {
+      padding: 0;
+      list-style: none;
+    }
+
+  .accordion-lists ul li a.collapse {
+    color: black;
+  }
+
+  .career .accordion-lists li + li {
+    margin-top: 15px;
+  }
+
+  .career .accordion-lists li {
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  .career .accordion-lists a {
+    display: block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding-right: 30px;
+    outline: none;
+    cursor: pointer;
+    color: black;
+  }
+
+    .career .accordion-lists a:hover {
+      color: black;
+    }
+
+  .career .accordion-lists span {
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+
+  .career .accordion-lists i {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .career .accordion-lists p {
+    margin-bottom: 0;
+    padding: 10px 0 0 0;
+  }
+
+  .career .accordion-lists .icon-show {
+    display: inline-block;
+  }
+
+  .career .accordion-lists .icon-hide {
+    display: none;
+  }
+
+  .career .accordion-lists a.collapsed {
+    color: black;
+  }
+
+
+
+    .career .accordion-lists a.collapsed .icon-show {
+      display: inline-block;
+    }
+
+    .career .accordion-lists a.collapsed .icon-close {
+      display: none;
+    }
+
+  @media (max-width: 1024px) {
+
+    .career .accordion-lists {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 992px) {
+
+    .career .accordion-lists {
+      padding-bottom: 30px;
+    }
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+
+  .container-fluid .col-md-2 p {
+    text-align: left;
+  }
+
+  @media (max-device-width: 1440px) and (min-device-width: 992px) {
+    .headings {
+      position: absolute;
+      top: 26%;
+    }
+  }
+
+  .headings {
+    position: absolute;
+    top: 25%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .accordion-lists li:hover {
+      box-shadow: 0px 4px 32px rgb(0 0 0 / 8%);
+      padding-left: 20px;
+      padding-right: 20px;
+      transition: all 0.5s;
+      margin-left: 0px !important;
+      border-radius: 4px;
+    }
+
+    .collapse-content {
+      /* padding: 0px 0px; */
+      padding-left: 0 !important;
+      padding-right: 20px !important;
+      font-size: 15px;
+    }
+
+    .accordion-lists .collapse-content li {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+    }
+  }

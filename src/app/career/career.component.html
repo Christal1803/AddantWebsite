@@ -1,0 +1,382 @@
+
+<div class="container-fluid p-0">
+  <div class="row">
+    <div class="col-12">
+      <img src="./assets/img/careerbanner.png" class="smartcitybanner  mt-auto">
+      <div class="headings banner-align mt-4">
+        <h1 class="text-white mt-4">Join Us</h1>
+        <p class="text-white para">
+          With our core fundamentals of ownership and harmony, we have an ecosystem
+          that ensures your career growth in the right direction.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =====Section carrer Banner end==== -->
+
+<div class="container-fluid carrer-mainsection mt-5">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <img src="./assets/img/addant logoo.png" class="img-fluid">
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-12 carrercontent">
+      <h4>Overview</h4>
+      <p class="carrercontent-1">
+        Addant is always on the lookout for top
+        performers and talented people to complement our team of seasoned
+        professionals. We welcome fresh graduates to come and build a career
+        with us. What greets you at Addant will be a high spirited work
+        environment that rewards performance and initiatives with ample
+        opportunities to learn, earn, and grow.
+      </p>
+
+      <button class="applynowbtn">Life at Addant</button>
+    </div>
+  </div>
+
+  <div class="openings mt-5">
+    <div class="text-left">
+      <h4>Open Positions</h4>
+      <section id="career" class="career section-bg carrer-collapse mt-4 mb-4 careerpage-li">
+        <div class="container-fluid" data-aos="fade-up">
+
+          <div class="row">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1"  *ngFor="let job of position">
+              <div class="accordion-lists">
+                <ul>
+                  <li>
+                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">{{job.Name}}<i id="showdown" class="bx bx-chevron-down" onclick="showup()"></i><i id="showup" class="bx bx-chevron-up icon-hide" onclick="showdown()"></i></a>
+                    <div id="accordion-list-1" class="collapse collapse-content" data-bs-parent=".accordion-list">
+                      <ul>
+                        <!--*ngFor="let job of position"
+                        {{job.positionDetails.SubHeader}}-->
+                        <p class="mb-2">
+                          <b>Job Description : </b>
+                          Job Description: We are looking for passionate
+                          Senior Software Engineers to join our development
+                          center at Technopark, Trivandrum, Kerala. This
+                          candidate will be focused on delivering cutting-edge
+                          software solutions for our Europe & US-based
+                          clients.
+                        </p>
+                        <p class="mb-2"><b>Responsibilities :</b></p>
+
+                        <li>
+                          This position will focus on designing &
+                          developing software solutions using C#.Net, WCF,
+                          Web API, and MS SQL Server.
+                        </li>
+
+                        <li>
+                          Strong knowledge and understanding of OOD & OOP.
+                        </li>
+
+                        <li>
+                          Good to have knowledge in WPF/XAML.
+                        </li>
+
+                        <li>
+                          Good to have exposure to Agile development
+                          methodology & Scrum framework.
+                        </li>
+
+                        <li>
+                          Good communication skills, analytical and
+                          technical problem-solving skills.
+                        </li>
+
+                        <li>
+                          Passionate to learn new technologies, fast
+                          learner, and able to work with minimal
+                          supervision.
+                        </li>
+
+                        <p class="mt-2">
+                          <b>Min Experience :</b> 4-6 years of
+                          experience
+                        </p>
+                        <button class="applynowbtn" data-bs-toggle="modal" data-bs-target="#FormModal">Apply Now</button>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="exampleModalLabel">
+                <img src="assets/img/favicon.png" style="height: 25px;width: 25px;" class="mr-2">Fill the
+                details
+              </h6>
+              <button type="button" class="close modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style=" color: black;">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <form class="requires-validation" [formGroup]="resumeForm">
+                <div class="row mt-2">
+                  <div class="col-lg-6">
+                    <div class="panel">
+                      <div class="mb-3">
+                        <label for="first_name" class="mb-2">First Name:</label>
+                        <input type="name" class="form-control" id="first_name" placeholder="Enter firstname"
+                               name="first_name" formControlName="first_name"
+                                 [ngClass]="{ 'is-invalid': currentForm.first_name.touched && currentForm.first_name.invalid}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="panel">
+                      <div class="mb-3">
+                        <label for="last_name" class="mb-2">Last Name:</label>
+                        <input type="name" class="form-control" id="last_name" placeholder="Enter lastname"
+                               name="last_name"
+                               formControlName="last_name"
+                                 [ngClass]="{ 'is-invalid': currentForm.last_name.touched && currentForm.last_name.invalid}">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="row mt-2">
+                  <div class="col-lg-6">
+                    <div class="panel">
+                      <div class="mb-3">
+                        <label for="email" class="mb-2">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                               name="email" formControlName="email"
+                                 [ngClass]="{ 'is-invalid': currentForm.email.touched && currentForm.email.invalid}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="panel">
+                      <div class="mb-3">
+                        <label for="mobile" class="mb-2">Mobile:</label>
+                        <input type="tel" class="form-control" id="mobile"
+                               placeholder="Enter mobile number" name="mobile"
+                               formControlName="mobile"
+                                 [ngClass]="{ 'is-invalid': currentForm.mobile.touched && currentForm.mobile.invalid}">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row mt-2">
+                  <div class="col-12">
+                    <div class="panel">
+                      <div class="mb-3">
+                        <label for="comment" class="mb-2">
+                          Tell us about
+                          yourself:
+                        </label>
+                        <textarea class="form-control" rows="8" id="comment" name="text" formControlName="Description"
+                                  ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt-2">
+                  <div class="col-12">
+                    <div class="panel">
+                      <div class="mb-3">
+                        <div class="upload-btn-wrapper">
+                          <label for="comment" class="mb-2">
+                            Upload your
+                            resume:
+                          </label><br>
+                          <input type="file" name="myfile" formControlName="ResumeUrl"
+                                   [ngClass]="{ 'is-invalid': currentForm.ResumeUrl.touched && currentForm.ResumeUrl.invalid}"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <div class="row mt-2">
+                  <div class="col-12">
+                    <div class="panel">
+                      <!--<div class="alert alert-success  fade show" id="panel" role="alert">
+                        <strong>We have received your application!</strong> we will get back to you
+                        soon.
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>-->
+                      <div class="mb-3">
+                        <button type="button" class="btn applybtn" (click)="saveResume()">
+                          Submit
+                        </button>
+
+
+                        <script>
+                          function myFunction() {
+                            document.getElementById("panel").style.display = "none";
+                          }
+                        </script>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="openings mt-5">
+        <div class="text-left">
+          <h4>Employee Testimonials</h4>
+        </div>
+
+        <div class="emp-testimonals mb-5">
+          <div class="testimonial">
+            <div class="container-fluid p-0">
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mb-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <img class="img-fluid" src="./assets/img/getintouch.svg">
+      <p style="font-size: 16px;">
+        If you think you can help us grow, evolve and become a better
+        version of ourselves, submit your resume and cover letter here!
+        We'd
+        love to hear from you.
+      </p>
+      <button class="applynowbtn" data-bs-toggle="modal" data-bs-target="#FormModal">
+        Apply
+        Now
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function () {
+    $('.testimonial-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 800,
+      speed: 600,
+      draggable: true,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: false,
+
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false,
+          }
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            arrows: false,
+            dots: false,
+          }
+        },
+
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            arrows: false,
+            dots: false,
+
+          }
+        },
+        {
+          breakpoint: 1030,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 2,
+            infinite: false,
+            arrows: false,
+            dots: false,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            variableWidth: true,
+            arrows: false,
+            dots: false,
+          }
+        },
+
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            variableWidth: true,
+            arrows: false,
+            dots: false,
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+
+<style>
+  button.close {
+    background-color: transparent;
+    border: 0;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+  }
+</style>
