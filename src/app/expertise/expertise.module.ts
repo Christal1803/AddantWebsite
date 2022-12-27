@@ -11,6 +11,7 @@ import { MobileapplicationsComponent } from './mobileapplications/mobileapplicat
 import { WebapplicationsComponent } from './webapplications/webapplications.component';
 
 
+
 @NgModule({
   declarations: [
     ExpertiseComponent,
@@ -23,7 +24,8 @@ import { WebapplicationsComponent } from './webapplications/webapplications.comp
   ],
   imports: [
     CommonModule,
-    ExpertiseRoutingModule
+    ExpertiseRoutingModule,
+
   ]
 })
 export class ExpertiseModule { }

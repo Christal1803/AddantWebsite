@@ -250,15 +250,157 @@
           <h4>Employee Testimonials</h4>
         </div>
 
-        <div class="emp-testimonals mb-5">
-          <div class="testimonial">
-            <div class="container-fluid p-0">
-
-
-
-
-
-
+        <div class="col-lg-12 col-md-12 col-sm-12 expertiseright-section">
+          <div class="emp-testimonals mb-5">
+            <div class="testimonial">
+              <div class="container-fluid p-0">
+                <owl-carousel-o [options]="customOptions">
+                  <!--Kiosk & Touchscreen slider starts-->
+                  <ng-template carouselSlide>
+                    <div class="content">
+                      <a routerLink="/kisoktouchscreen">
+                        <!--slider heading starts-->
+                        <div class="slider-heading position-absolute"><p>Kiosk & Touchscreen</p></div>
+                        <!--slider heading ends-->
+                        <!--slider image starts-->
+                        <picture>
+                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/kisok.png">
+                          <img class="content-image slideimg" src="assets/img/slidermob/slider44.png" alt="kisok and touch screen image">
+                        </picture>
+                        <!--slider image ends-->
+                        <div class="content-overlay"></div>
+                        <!--slider hover content starts-->
+                        <div class="content-details fadeIn-bottom">
+                          <h3 class="content-title">Kiosk & Touchscreen</h3>
+                          <p class="content-text">Kiosk & touchscreen applications development with efficient UIs, multi-tenant services, hardware interfaces, and remote administration.</p>
+                        </div>
+                        <!--slider hover content ends-->
+                      </a>
+                    </div>
+                  </ng-template>
+                  <!--Kiosk & Touchscreen slider ends-->
+                  <!--Mobile Applications slider starts-->
+                  <ng-template carouselSlide>
+                    <div class="content">
+                      <a routerLink="/mobileapplications">
+                        <!--slider heading starts-->
+                        <div class="slider-heading position-absolute"><p>Mobile Applications</p></div>
+                        <!--slider heading ends-->
+                        <!--slider image starts-->
+                        <picture>
+                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/mobileapplications.png">
+                          <img class="content-image slideimg" src="assets/img/slidermob/slider33.png" alt="mobile applications image">
+                        </picture>
+                        <!--slider image ends-->
+                        <div class="content-overlay"></div>
+                        <!--slider hover content starts-->
+                        <div class="content-details fadeIn-bottom">
+                          <h3 class="content-title">Mobile Applications</h3>
+                          <p class="content-text">Native and cross-platform mobile applications development across iOS and Android platforms leveraging task-oriented and context-aware UI.</p>
+                        </div>
+                        <!--slider hover content ends-->
+                      </a>
+                    </div>
+                  </ng-template>
+                  <!--Mobile Applications slider ends-->
+                  <!--Web Applications slider starts-->
+                  <ng-template carouselSlide>
+                    <div class="content">
+                      <a routerLink="/webapplications">
+                        <!--slider heading starts-->
+                        <div class="slider-heading position-absolute"><p>Web Applications</p></div>
+                        <!--slider heading ends-->
+                        <!--slider image starts-->
+                        <picture>
+                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/websolutions.png">
+                          <img class="content-image slideimg" src="assets/img/slidermob/slider22.png" alt="web applications image">
+                        </picture>
+                        <!--slider image ends-->
+                        <div class="content-overlay"></div>
+                        <!--slider hover content starts-->
+                        <div class="content-details fadeIn-bottom">
+                          <h3 class="content-title">Web Applications</h3>
+                          <p class="content-text">Distributed web applications focusing customer experience, application performance, service availability, and scalability.</p>
+                        </div>
+                        <!--slider hover content ends-->
+                      </a>
+                    </div>
+                  </ng-template>
+                  <!--Web Applications slider ends-->
+                  <!--Cloud Solutions slider starts-->
+                  <ng-template carouselSlide>
+                    <div class="content">
+                      <a routerLink="/cloudsolutions">
+                        <!--slider heading starts-->
+                        <div class="slider-heading position-absolute"><p>Cloud Solutions</p></div>
+                        <!--slider heading ends-->
+                        <!--slider image starts-->
+                        <picture>
+                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/cloud.png">
+                          <img class="content-image slideimg" src="assets/img/slidermob/slider66.png" alt="cloud solutions image">
+                        </picture>
+                        <!--slider image ends-->
+                        <div class="content-overlay"></div>
+                        <!--slider hover content starts-->
+                        <div class="content-details fadeIn-bottom">
+                          <h3 class="content-title">Cloud Solutions</h3>
+                          <p class="content-text">Cloud solution development and deployment leveraging Amazon AWS and Microsoft Azure stack.</p>
+                        </div>
+                        <!--slider hover content ends-->
+                      </a>
+                    </div>
+                  </ng-template>
+                  <!--Cloud Solutions slider ends-->
+                  <!--Desktop Applications slider starts-->
+                  <ng-template carouselSlide>
+                    <div class="content">
+                      <a routerLink="/desktopapplications">
+                        <!--slider heading starts-->
+                        <div class="slider-heading position-absolute"><p>Desktop Applications</p></div>
+                        <!--slider heading ends-->
+                        <!--slider image starts-->
+                        <picture>
+                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/desktop.png">
+                          <img class="content-image slideimg" src="assets/img/slidermob/slider11.png" alt="desktop applications image">
+                        </picture>
+                        <!--slider image ends-->
+                        <div class="content-overlay"></div>
+                        <!--slider hover content starts-->
+                        <div class="content-details fadeIn-bottom">
+                          <h3 class="content-title">Desktop Applications</h3>
+                          <p class="content-text">Custom desktop applications development with precise architectural choices, framework selections, and operations support.</p>
+                        </div>
+                        <!--slider hover content ends-->
+                      </a>
+                    </div>
+                  </ng-template>
+                  <!--Desktop Applications slider ends-->
+                  <!--Data Science & Engineering slider starts-->
+                  <ng-template carouselSlide>
+                    <div class="content">
+                      <a routerLink="/datascienceandengineering">
+                        <!--slider heading starts-->
+                        <div class="slider-heading position-absolute"><p>Data Science & Engineering</p></div>
+                        <!--slider heading ends-->
+                        <!--slider image starts-->
+                        <picture>
+                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/datascience.png">
+                          <img class="content-image slideimg" src="assets/img/slidermob/slider77.png" alt="data science engineering image">
+                        </picture>
+                        <!--slider image ends-->
+                        <div class="content-overlay"></div>
+                        <!--slider hover content starts-->
+                        <div class="content-details fadeIn-bottom">
+                          <h3 class="content-title">Data Science & Engineering</h3>
+                          <p class="content-text">Unique and advanced data engineering technologies and methodologies enabling customers with faster and impactful business decisions.</p>
+                        </div>
+                        <!--slider hover content ends-->
+                      </a>
+                    </div>
+                  </ng-template>
+                  <!--Data Science & Engineering slider ends-->
+                </owl-carousel-o>
+              </div>
             </div>
           </div>
         </div>

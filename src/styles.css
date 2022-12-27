@@ -269,6 +269,17 @@ a.seeall {
   color: white;
 }
 
+
+@media (max-device-width: 1440px) and (min-device-width: 992px) {
+  .herosection-left h1 {
+    font-size: 26px !important;
+    font-weight: 700;
+    line-height: 84px;
+    color: var(--color-default);
+  }
+}
+
+
 .nav-links li:hover .dot {
   display: contents;
   transition: all 0.2s;

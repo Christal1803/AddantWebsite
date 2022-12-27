@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 4.5
+        items: 3.5
       }
     },
     nav: true
