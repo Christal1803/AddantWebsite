@@ -40,7 +40,9 @@
       <h4>Open Positions</h4>
       <section id="career" class="career section-bg carrer-collapse mt-4 mb-4 careerpage-li">
         <div class="container-fluid" data-aos="fade-up">
-
+          <div class="row" *ngIf="position.length==0">
+            <p>No jobs here</p>
+          </div>
           <div class="row">
             <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1" *ngFor="let job of position; let i = index">
               <div class="accordion-lists">
@@ -87,7 +89,8 @@
                       <div class="mb-3">
                         <label for="first_name" class="mb-2">First Name:</label>
                         <input type="name" class="form-control" id="first_name" placeholder="Enter firstname"
-                               name="first_name" formControlName="first_name">
+                               name="first_name" formControlName="first_name"
+                               [ngClass]="{ 'is-invalid': currentForm.first_name.touched && currentForm.first_name.invalid}">
                       </div>
                     </div>
                   </div>
@@ -97,7 +100,8 @@
                         <label for="last_name" class="mb-2">Last Name:</label>
                         <input type="name" class="form-control" id="last_name" placeholder="Enter lastname"
                                name="last_name"
-                               formControlName="last_name">
+                               formControlName="last_name"
+                               [ngClass]="{ 'is-invalid': currentForm.last_name.touched && currentForm.last_name.invalid}">
                       </div>
                     </div>
                   </div>
@@ -111,7 +115,8 @@
                       <div class="mb-3">
                         <label for="email" class="mb-2">Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email"
-                               name="email" formControlName="email">
+                               name="email" formControlName="email"
+                               [ngClass]="{ 'is-invalid': currentForm.email.touched && currentForm.email.invalid}">
                       </div>
                     </div>
                   </div>
@@ -121,7 +126,8 @@
                         <label for="mobile" class="mb-2">Mobile:</label>
                         <input type="tel" class="form-control" id="mobile"
                                placeholder="Enter mobile number" name="mobile"
-                               formControlName="mobile">
+                               formControlName="mobile"
+                               [ngClass]="{ 'is-invalid': currentForm.mobile.touched && currentForm.mobile.invalid}">
                       </div>
                     </div>
                   </div>
@@ -151,7 +157,8 @@
                             Upload your
                             resume:
                           </label><br>
-                          <input type="file" name="myfile" formControlName="resume" />
+                                  <input type="file" name="myfile" formControlName="ResumeUrl" (change)="selectResume($event)"
+                                         [ngClass]="{ 'is-invalid': currentForm.ResumeUrl.touched && currentForm.ResumeUrl.invalid}" />
                         </div>
                       </div>
                     </div>
