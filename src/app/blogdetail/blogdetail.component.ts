@@ -13,7 +13,15 @@ export class BlogdetailComponent implements OnInit {
   public href: any;
   public id: any;
   public idBlog: any;
+  public MainHeader: any;
+  public ProfilePicUrl: any;
+  public CreatedBy: any;
   public blog: any;
+  public CreatedOn: any;
+  public MinReadTime: any;
+  public BannerImgUrl: any;
+  public BlogContent: any;
+
   constructor(private _apiService: BlogService, private Activatedroute: ActivatedRoute,
     private router: Router) { }
 
@@ -34,6 +42,13 @@ export class BlogdetailComponent implements OnInit {
       if (response) {
         this.blogdetail = response;
         console.log(this.blogdetail)
+        this.MainHeader = this.blogdetail.MainHeader;
+        this.ProfilePicUrl = this.blogdetail.ProfilePicUrl;
+        this.CreatedBy = this.blogdetail.CreatedBy;
+        this.CreatedOn = this.blogdetail.CreatedOn;
+        this.MinReadTime = this.blogdetail.MinReadTime;
+        this.BannerImgUrl = this.blogdetail.BannerImgUrl;
+        this.BlogContent = this.blogdetail.BlogContent;
       }
     })
     this._apiService.getBlogDetail().subscribe((response: any) => {
@@ -43,4 +58,5 @@ export class BlogdetailComponent implements OnInit {
       }
     })
   }
+ 
 }

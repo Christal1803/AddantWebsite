@@ -12,6 +12,11 @@ declare var window: any;
 })
 export class CareerComponent implements OnInit {
   public position: any;
+  public positionDetailDTOs: any;
+  public idPosition: any;
+  public resume: any;
+  public idCandidate: any;
+  public positionById: any;
 
   resumeForm = new FormGroup({
     first_name: new FormControl('', Validators.required),
@@ -37,12 +42,46 @@ export class CareerComponent implements OnInit {
     this._apiService.getPositionDetail().subscribe((response: any) => {
       if (response) {
         this.position = response;
+
         console.log(this.position);
+        console.log(this.positionDetailDTOs);
+      }
+    })
+  }
+  showup(id: any) {
+    debugger
+    console.log(id)
+    this._apiService.getPostionById(id).subscribe((response: any) => {
+      if (response) {
+        this.positionById = response;
+        this.positionDetailDTOs = response.positionDetailDTOs;
+
+        console.log(this.positionById);
+        console.log(this.positionDetailDTOs);
       }
     })
   }
 
+  applyJob(idJob: any) {
+    debugger
+    this.idPosition = idJob;
+    console.log(this.idPosition)
+  }
+
+  selectResume(event: any) {
+    debugger
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      console.log(file);
+      this.resume = file;
+      //this.imageUrl = file.name;
+
+    }
+
+  }
   saveResume() {
+    debugger
+    console.log(this.idPosition)
     const resumeBody = {
       FirstName: this.resumeForm.controls['first_name'].value,
       LastName: this.resumeForm.controls['last_name'].value,
@@ -50,11 +89,14 @@ export class CareerComponent implements OnInit {
       Mobile: this.resumeForm.controls['mobile'].value,
       Description: this.resumeForm.controls['Description'].value,
       ResumeUrl: "",
-      IdPosition:16
+      IdPosition: this.idPosition,
 
     }
+    console.log(resumeBody)
     this._apiService.saveResume(resumeBody).subscribe((response: any) => {
       if (response) {
+        this.idCandidate = response;
+        this.mediaUpload(this.idCandidate);
         console.log("hello")
         Swal.fire({
           position: 'center',
@@ -64,8 +106,8 @@ export class CareerComponent implements OnInit {
           timer: 1500
         })
         this.resumeForm.reset();
-       
-          this.formModal.hide();
+
+        this.formModal.hide();
       } else {
         console.log("hello error")
         Swal.fire({
@@ -77,6 +119,23 @@ export class CareerComponent implements OnInit {
     });
   }
 
+  mediaUpload(idCandidate: any) {
+    console.log(idCandidate)
+    const formdata = new FormData();
+    formdata.append('UploadedDocs', "UploadedDocs");
+    formdata.append('IdCandidate', idCandidate.IdCandidate);
+    formdata.append('ResumeUrl', this.resume);
+
+    this._apiService.saveResumeImage(formdata).subscribe((response: any) => {
+      if (response) {
+      } else {
+        console.log("hello error")
+      }
+    });
+    this.resumeForm.reset();
+    //this.closebutton.nativeElement.click();
+  }
+
 
   customOptions: OwlOptions = {
     autoplay: true,
@@ -85,7 +144,7 @@ export class CareerComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
-    dots: false,
+    dots: true,
     navSpeed: 7000,
     navText: ['', ''],
     responsive: {
@@ -99,7 +158,7 @@ export class CareerComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 4.5
+        items: 3
       }
     },
     nav: true

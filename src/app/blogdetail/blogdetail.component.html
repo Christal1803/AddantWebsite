@@ -1,58 +1,77 @@
 <div class="container-fluid mt-3">
   <div class="row cardsbanner">
     <div class="col-12 blogbanner">
-      <h1 class="blog-title"><b>{{blogdetail.MainHeader}}</b></h1>
+      <h1 class="blog-title"><b>{{MainHeader}}</b></h1>
 
       <div class="user-details">
-        <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" />
-        <p class="user-name d-inline ml-2">{{blogdetail.CreatedBy}} </p> <p class="upload-time d-inline ml-2">{{blogdetail.CreatedOn |date}} . {{blogdetail.MinReadTime}} min read</p>
+
+        <img src="{{ProfilePicUrl}}" alt="Profile" class="rounded-circle" />
+        <p class="user-name d-inline ml-2">{{CreatedBy}} </p> <p class="upload-time d-inline ml-2">{{CreatedOn |date}} . {{MinReadTime}} min read</p>
         <p class="share-blog">Share to : <i class="share fa-solid fa-link clipboard"></i> <i class="share fa-brands fa-facebook ml-2"></i><i class="share fa-brands fa-linkedin ml-2"></i></p>
       </div>
+      <div class="banner_blog">
+        <img src="{{BannerImgUrl}}" class="blog-image">
 
-      <img src="./assets/img/blog/blog1banner.png" class="img-fluid blog-image">
+      </div>
     </div>
-    <div class="col-12 blogcontent">
-      <p class="blog-paragraph">The WebRTC conversation, starting as a niche discussion within a few tight-knit circles, has blossomed to a broader conversation that includes both new startups and many traditional telecom vendors. It makes sense, considering the broad trends it follows, including cloud, unified communications, and customer experience. WebRTC has the unique capability to supplement those three by adding a new layer to the interaction lifecycle. WebRTC, fundamentally, is the technology that enables straight browser-to-browser voice and video conversation.</p>
-      <p class="blog-paragraph">But, as Bolder Thinking’s Vice President of Sales Steve Jackson points out, that’s an ideal that won’t be realized in mainstream business communications for some time for the same reasons VoIP, UC and other technologies have taken time to reach mass adoption: business are hesitant (perhaps even loathe) to replace their legacy technologies that still meet their needs. In some cases, VoIP and UC products have been recently deployed, making replacement or upgrade a financial impossibility. This is where Bolder Thinking comes into play with its 100 percent cloud-based solution that eliminates barriers to WebRTC adoption by addressing the fundamental need to enable WebRTC on the customer end, while connecting it to existing legacy infrastructure on the enterprise and contact center side.</p>
-      <p class="blog-paragraph">The company’s product routes a WebRTC interaction through its cloud infrastructure, answering the call and transcoding it so it can be seamlessly passed through to customer service agents on whatever existing platform they are on. So, while it doesn’t technically create an end-to-end WebRTC session, it allows businesses to gain the benefits of WebRTC and enable immediate engagement opportunities with customers, without massive investments in infrastructure or integration work for IT teams. Because Bolder Thinking operates completely in the cloud – Jackson boasts that the business actually owns exactly zero servers to run its platform – it is able to provide a dynamically scalable solution that allows customer service organizations to increase and reduce agents on the system as needed. “Steady state stuff is easy,” he says.</p>
-      <p class="blog-paragraph">“It’s the unplanned events that are fraught with danger. What we do is make sure every call gets answered – there are no fast-busy signals – then [the business] determines how each call is routed to agents or IVRs or answering systems.” One of the key benefits to being able to actually answer and route each and every call is reduced abandon-rates – and the resulting increase in business volume. In addition, Bolder Thinking is helping drive WebRTC adoption by creating a low barrier to entry, Web-enabling voice on the customer side without necessitating major changes on the agent end. “We think it makes a lot of sense for almost any business,” concludes Jackson. He’s right. Not only do the economics make sense, but the ability to further deliver on the promise of UC – anywhere, any device, any network – has massive implications for an enhanced customer experience. If there’s one thing evident in today’s society, it’s that the Millennial Generation wants simple and intuitive interactions – not complex with long wait times. WebRTC and Bolder Thinking are making that a reality.</p>
+    <div class="col-12 blogcontent" style="white-space:pre-wrap">
+      {{BlogContent}}
 
     </div>
 
 
     <h4 class="mb-4"><b>Related Blogs</b></h4>
+    <div class="col-sm-6 col-md-6 col-lg-4 solutionmircocard" *ngFor="let b of blog">
 
-
-    <div class="col-sm-6 col-md-6 col-lg-6 solutionmircocard">
-
-      <div class="card">
-        <img src="./assets/img/blog/blog2.png" class="card-img-top" alt="...">
-        <div class="card-body">
+      <div class="card card-height" routerLink="/detail/{{b.IdBlog}}" (click)="ngOnInit()">
+        <img src="{{b.ConverImgUrl}}" class="card-img-top" alt="...">
+        <div class="card-body" routerLink="/detail/{{b.IdBlog}}">
           <div class="user-details">
-            <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" /> <p class="user-name d-inline ml-2">Addant Admin .</p> <p class="upload-time d-inline ml-2"> 10 min read</p>
+            <img class="rounded-circle" alt="userimg" src="{{b.ProfilePicUrl}}" />
+            <p class="user-name d-inline ml-2">{{b.CreatedBy}}</p>
           </div>
-          <h6 class="card-title mt-3">WebRTC Real-time Communication</h6>
-          <p class="card-text">Real-time communication without plugins Imagine a world where your phone, TV and computer could all communicate...</p>
+
+          <h6 class="card-title mt-3">{{b.MainHeader}}</h6>
+          <p class="user-names d-inline ml-2"> {{b.CreatedOn | date:'medium'}}</p>
+
+          <p class="card-text">{{b.BlogContent |slice:0:100}}</p>
         </div>
       </div>
     </div>
 
 
-    <div class="col-sm-6 col-md-6 col-lg-6 solutionmircocard">
 
-      <div class="card">
-        <img src="./assets/img/blog/blog3.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <div class="user-details">
-            <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" /> <p class="user-name d-inline ml-2">Addant Admin .</p> <p class="upload-time d-inline ml-2"> 10 min read</p>
-          </div>
 
-          <h6 class="card-title  mt-3">Around Me in a City</h6>
+    <!--<div class="col-sm-6 col-md-6 col-lg-6 solutionmircocard">
 
-          <p class="card-text">Whenever you go in any City, one most common thing that you have in your mind is to find your favorite restaurant/fast...</p>
+    <div class="card">
+      <img src="./assets/img/blog/blog2.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="user-details">
+          <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" /> <p class="user-name d-inline ml-2">Addant Admin .</p> <p class="upload-time d-inline ml-2"> 10 min read</p>
         </div>
+        <h6 class="card-title mt-3">WebRTC Real-time Communication</h6>
+        <p class="card-text">Real-time communication without plugins Imagine a world where your phone, TV and computer could all communicate...</p>
       </div>
     </div>
+  </div>
+
+
+  <div class="col-sm-6 col-md-6 col-lg-6 solutionmircocard">
+
+    <div class="card">
+      <img src="./assets/img/blog/blog3.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="user-details">
+          <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" /> <p class="user-name d-inline ml-2">Addant Admin .</p> <p class="upload-time d-inline ml-2"> 10 min read</p>
+        </div>
+
+        <h6 class="card-title  mt-3">Around Me in a City</h6>
+
+        <p class="card-text">Whenever you go in any City, one most common thing that you have in your mind is to find your favorite restaurant/fast...</p>
+      </div>
+    </div>
+  </div>-->
 
   </div>
 </div>

@@ -20,6 +20,8 @@ import { CareerComponent } from './career/career.component';
 import { LifeofaddantComponent } from './lifeofaddant/lifeofaddant.component';
 import { LoadetailComponent } from './loadetail/loadetail.component';
 import { LightgalleryModule } from 'lightgallery/angular';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -48,6 +50,7 @@ import { LightgalleryModule } from 'lightgallery/angular';
     ReactiveFormsModule,
     HttpClientModule,
     LightgalleryModule,
+    NgbAccordionModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

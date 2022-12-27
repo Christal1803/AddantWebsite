@@ -40,68 +40,38 @@
       <h4>Open Positions</h4>
       <section id="career" class="career section-bg carrer-collapse mt-4 mb-4 careerpage-li">
         <div class="container-fluid" data-aos="fade-up">
-
+          <div class="row" *ngIf="position.length==0">
+            <p>No jobs here</p>
+          </div>
           <div class="row">
-            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1"  *ngFor="let job of position">
-              <div class="accordion-lists">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1 jobs" *ngFor="let job of position; let i = index">
+
+              <ngb-accordion [closeOthers]="true"  (click)="showup(job.IdPosition)">
+                <ngb-panel id="static-1" title="{{job.Name}}">
+                  <ng-template ngbPanelContent>
+                    <ul>
+                      <p class="mb-2" *ngFor="let y of positionDetailDTOs; let i = index" style="white-space:pre-wrap">
+                        <b>{{y.SubHeader}} </b><br />
+                        {{y.SubHeaderContent}}
+                      </p>
+                      <button class="applynowbtn" data-bs-toggle="modal" data-bs-target="#FormModal" (click)="applyJob(job.IdPosition)">Apply Now</button>
+                    </ul>
+                  </ng-template>
+                </ngb-panel>
+                
+              </ngb-accordion>
+
+
+              <!--<div class="accordion-lists">
                 <ul>
                   <li>
-                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">{{job.Name}}<i id="showdown" class="bx bx-chevron-down" onclick="showup()"></i><i id="showup" class="bx bx-chevron-up icon-hide" onclick="showdown()"></i></a>
+                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">{{job.Name}}<i id="showdown" class="bx bx-chevron-down" (click)="showup(job.IdPosition)"></i><i id="showup" class="bx bx-chevron-up icon-hide" onclick="showdown()"></i></a>
                     <div id="accordion-list-1" class="collapse collapse-content" data-bs-parent=".accordion-list">
-                      <ul>
-                        <!--*ngFor="let job of position"
-                        {{job.positionDetails.SubHeader}}-->
-                        <p class="mb-2">
-                          <b>Job Description : </b>
-                          Job Description: We are looking for passionate
-                          Senior Software Engineers to join our development
-                          center at Technopark, Trivandrum, Kerala. This
-                          candidate will be focused on delivering cutting-edge
-                          software solutions for our Europe & US-based
-                          clients.
-                        </p>
-                        <p class="mb-2"><b>Responsibilities :</b></p>
-
-                        <li>
-                          This position will focus on designing &
-                          developing software solutions using C#.Net, WCF,
-                          Web API, and MS SQL Server.
-                        </li>
-
-                        <li>
-                          Strong knowledge and understanding of OOD & OOP.
-                        </li>
-
-                        <li>
-                          Good to have knowledge in WPF/XAML.
-                        </li>
-
-                        <li>
-                          Good to have exposure to Agile development
-                          methodology & Scrum framework.
-                        </li>
-
-                        <li>
-                          Good communication skills, analytical and
-                          technical problem-solving skills.
-                        </li>
-
-                        <li>
-                          Passionate to learn new technologies, fast
-                          learner, and able to work with minimal
-                          supervision.
-                        </li>
-
-                        <p class="mt-2">
-                          <b>Min Experience :</b> 4-6 years of
-                          experience
-                        </p>
-                        <button class="applynowbtn" data-bs-toggle="modal" data-bs-target="#FormModal">Apply Now</button>
-                      </ul>
+                      
                     </div>
                   </li>
                 </ul>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
@@ -131,7 +101,7 @@
                         <label for="first_name" class="mb-2">First Name:</label>
                         <input type="name" class="form-control" id="first_name" placeholder="Enter firstname"
                                name="first_name" formControlName="first_name"
-                                 [ngClass]="{ 'is-invalid': currentForm.first_name.touched && currentForm.first_name.invalid}">
+                               [ngClass]="{ 'is-invalid': currentForm.first_name.touched && currentForm.first_name.invalid}">
                       </div>
                     </div>
                   </div>
@@ -142,7 +112,7 @@
                         <input type="name" class="form-control" id="last_name" placeholder="Enter lastname"
                                name="last_name"
                                formControlName="last_name"
-                                 [ngClass]="{ 'is-invalid': currentForm.last_name.touched && currentForm.last_name.invalid}">
+                               [ngClass]="{ 'is-invalid': currentForm.last_name.touched && currentForm.last_name.invalid}">
                       </div>
                     </div>
                   </div>
@@ -157,7 +127,7 @@
                         <label for="email" class="mb-2">Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email"
                                name="email" formControlName="email"
-                                 [ngClass]="{ 'is-invalid': currentForm.email.touched && currentForm.email.invalid}">
+                               [ngClass]="{ 'is-invalid': currentForm.email.touched && currentForm.email.invalid}">
                       </div>
                     </div>
                   </div>
@@ -168,7 +138,7 @@
                         <input type="tel" class="form-control" id="mobile"
                                placeholder="Enter mobile number" name="mobile"
                                formControlName="mobile"
-                                 [ngClass]="{ 'is-invalid': currentForm.mobile.touched && currentForm.mobile.invalid}">
+                               [ngClass]="{ 'is-invalid': currentForm.mobile.touched && currentForm.mobile.invalid}">
                       </div>
                     </div>
                   </div>
@@ -183,8 +153,7 @@
                           Tell us about
                           yourself:
                         </label>
-                        <textarea class="form-control" rows="8" id="comment" name="text" formControlName="Description"
-                                  ></textarea>
+                        <textarea class="form-control" rows="8" id="comment" name="text" maxlength="250" formControlName="Description"></textarea>
                       </div>
                     </div>
                   </div>
@@ -199,8 +168,8 @@
                             Upload your
                             resume:
                           </label><br>
-                          <input type="file" name="myfile" formControlName="ResumeUrl"
-                                   [ngClass]="{ 'is-invalid': currentForm.ResumeUrl.touched && currentForm.ResumeUrl.invalid}"/>
+                                  <input type="file" name="myfile" formControlName="ResumeUrl" (change)="selectResume($event)"
+                                         [ngClass]="{ 'is-invalid': currentForm.ResumeUrl.touched && currentForm.ResumeUrl.invalid}" />
                         </div>
                       </div>
                     </div>
@@ -214,23 +183,23 @@
                   <div class="col-12">
                     <div class="panel">
                       <!--<div class="alert alert-success  fade show" id="panel" role="alert">
-                        <strong>We have received your application!</strong> we will get back to you
-                        soon.
-                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>-->
+                    <strong>We have received your application!</strong> we will get back to you
+                    soon.
+                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>-->
                       <div class="mb-3">
                         <button type="button" class="btn applybtn" (click)="saveResume()">
                           Submit
                         </button>
 
 
-                        <script>
+                        <!--<script>
                           function myFunction() {
                             document.getElementById("panel").style.display = "none";
                           }
-                        </script>
+                        </script>-->
 
                       </div>
 
@@ -257,148 +226,301 @@
                 <owl-carousel-o [options]="customOptions">
                   <!--Kiosk & Touchscreen slider starts-->
                   <ng-template carouselSlide>
-                    <div class="content">
-                      <a routerLink="/kisoktouchscreen">
-                        <!--slider heading starts-->
-                        <div class="slider-heading position-absolute"><p>Kiosk & Touchscreen</p></div>
-                        <!--slider heading ends-->
-                        <!--slider image starts-->
-                        <picture>
-                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/kisok.png">
-                          <img class="content-image slideimg" src="assets/img/slidermob/slider44.png" alt="kisok and touch screen image">
-                        </picture>
-                        <!--slider image ends-->
-                        <div class="content-overlay"></div>
-                        <!--slider hover content starts-->
-                        <div class="content-details fadeIn-bottom">
-                          <h3 class="content-title">Kiosk & Touchscreen</h3>
-                          <p class="content-text">Kiosk & touchscreen applications development with efficient UIs, multi-tenant services, hardware interfaces, and remote administration.</p>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Fulfilled with joy and technical growth.
+                                Good platform for developers with passion. Enjoying the each and
+                                every moments.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/gopikatestimonial.png"
+                                   alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Gopika Remesan</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>Team Lead</p>
+                            </div>
+                          </div>
                         </div>
-                        <!--slider hover content ends-->
-                      </a>
+                      </div>
                     </div>
                   </ng-template>
-                  <!--Kiosk & Touchscreen slider ends-->
-                  <!--Mobile Applications slider starts-->
+                 
                   <ng-template carouselSlide>
-                    <div class="content">
-                      <a routerLink="/mobileapplications">
-                        <!--slider heading starts-->
-                        <div class="slider-heading position-absolute"><p>Mobile Applications</p></div>
-                        <!--slider heading ends-->
-                        <!--slider image starts-->
-                        <picture>
-                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/mobileapplications.png">
-                          <img class="content-image slideimg" src="assets/img/slidermob/slider33.png" alt="mobile applications image">
-                        </picture>
-                        <!--slider image ends-->
-                        <div class="content-overlay"></div>
-                        <!--slider hover content starts-->
-                        <div class="content-details fadeIn-bottom">
-                          <h3 class="content-title">Mobile Applications</h3>
-                          <p class="content-text">Native and cross-platform mobile applications development across iOS and Android platforms leveraging task-oriented and context-aware UI.</p>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Good work environment, good work -life
+                                balance, Manager and colleagues are easily
+                                approachable,Absolutely employee friendly.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/abhay.png" alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Abhay Kuruvath</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>Front End Developer</p>
+                            </div>
+                          </div>
                         </div>
-                        <!--slider hover content ends-->
-                      </a>
+                      </div>
                     </div>
                   </ng-template>
-                  <!--Mobile Applications slider ends-->
-                  <!--Web Applications slider starts-->
+                  
                   <ng-template carouselSlide>
-                    <div class="content">
-                      <a routerLink="/webapplications">
-                        <!--slider heading starts-->
-                        <div class="slider-heading position-absolute"><p>Web Applications</p></div>
-                        <!--slider heading ends-->
-                        <!--slider image starts-->
-                        <picture>
-                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/websolutions.png">
-                          <img class="content-image slideimg" src="assets/img/slidermob/slider22.png" alt="web applications image">
-                        </picture>
-                        <!--slider image ends-->
-                        <div class="content-overlay"></div>
-                        <!--slider hover content starts-->
-                        <div class="content-details fadeIn-bottom">
-                          <h3 class="content-title">Web Applications</h3>
-                          <p class="content-text">Distributed web applications focusing customer experience, application performance, service availability, and scalability.</p>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Addant is a company where an employee has
+                                all
+                                the opportunities to learn and develop
+                                their
+                                skills based on their sole interest.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/linitestimonial.png"
+                                   alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Linimol Thomas</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>Team Lead</p>
+                            </div>
+                          </div>
                         </div>
-                        <!--slider hover content ends-->
-                      </a>
+                      </div>
                     </div>
                   </ng-template>
-                  <!--Web Applications slider ends-->
-                  <!--Cloud Solutions slider starts-->
+                 
                   <ng-template carouselSlide>
-                    <div class="content">
-                      <a routerLink="/cloudsolutions">
-                        <!--slider heading starts-->
-                        <div class="slider-heading position-absolute"><p>Cloud Solutions</p></div>
-                        <!--slider heading ends-->
-                        <!--slider image starts-->
-                        <picture>
-                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/cloud.png">
-                          <img class="content-image slideimg" src="assets/img/slidermob/slider66.png" alt="cloud solutions image">
-                        </picture>
-                        <!--slider image ends-->
-                        <div class="content-overlay"></div>
-                        <!--slider hover content starts-->
-                        <div class="content-details fadeIn-bottom">
-                          <h3 class="content-title">Cloud Solutions</h3>
-                          <p class="content-text">Cloud solution development and deployment leveraging Amazon AWS and Microsoft Azure stack.</p>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Great place to work.Addant work culture
+                                provides a personal and professional work
+                                life
+                                balance.Very supportive management.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/ayanatestimonial.png"
+                                   alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Ayana Vinod</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>Team Lead</p>
+                            </div>
+                          </div>
                         </div>
-                        <!--slider hover content ends-->
-                      </a>
+                      </div>
                     </div>
                   </ng-template>
-                  <!--Cloud Solutions slider ends-->
-                  <!--Desktop Applications slider starts-->
+                 
                   <ng-template carouselSlide>
-                    <div class="content">
-                      <a routerLink="/desktopapplications">
-                        <!--slider heading starts-->
-                        <div class="slider-heading position-absolute"><p>Desktop Applications</p></div>
-                        <!--slider heading ends-->
-                        <!--slider image starts-->
-                        <picture>
-                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/desktop.png">
-                          <img class="content-image slideimg" src="assets/img/slidermob/slider11.png" alt="desktop applications image">
-                        </picture>
-                        <!--slider image ends-->
-                        <div class="content-overlay"></div>
-                        <!--slider hover content starts-->
-                        <div class="content-details fadeIn-bottom">
-                          <h3 class="content-title">Desktop Applications</h3>
-                          <p class="content-text">Custom desktop applications development with precise architectural choices, framework selections, and operations support.</p>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>It's a good
+                                experience to work here in Addant systems . The work culture is
+                                excellent and encouraging.Great company to begin and continue your
+                                career.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/anjutestimonial.png"
+                                   alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Anju Anilkumar</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>Software Engineer</p>
+                            </div>
+                          </div>
                         </div>
-                        <!--slider hover content ends-->
-                      </a>
+                      </div>
                     </div>
                   </ng-template>
-                  <!--Desktop Applications slider ends-->
-                  <!--Data Science & Engineering slider starts-->
+                  
                   <ng-template carouselSlide>
-                    <div class="content">
-                      <a routerLink="/datascienceandengineering">
-                        <!--slider heading starts-->
-                        <div class="slider-heading position-absolute"><p>Data Science & Engineering</p></div>
-                        <!--slider heading ends-->
-                        <!--slider image starts-->
-                        <picture>
-                          <source class="slideimg" media="(min-width:481px)" srcset="assets/img/slider/datascience.png">
-                          <img class="content-image slideimg" src="assets/img/slidermob/slider77.png" alt="data science engineering image">
-                        </picture>
-                        <!--slider image ends-->
-                        <div class="content-overlay"></div>
-                        <!--slider hover content starts-->
-                        <div class="content-details fadeIn-bottom">
-                          <h3 class="content-title">Data Science & Engineering</h3>
-                          <p class="content-text">Unique and advanced data engineering technologies and methodologies enabling customers with faster and impactful business decisions.</p>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Fulfilled with joy and technical growth.Great place to work.Good
+                                work environment, good work -life
+                                balance,Happy to part of Addant.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/abhijith.png" alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Abhijith A G</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>UX Designer</p>
+                            </div>
+                          </div>
                         </div>
-                        <!--slider hover content ends-->
-                      </a>
+                      </div>
                     </div>
                   </ng-template>
-                  <!--Data Science & Engineering slider ends-->
+                  
+
+                  <ng-template carouselSlide>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Excellent work culture and systematic
+                                approach to problem solving.Also provides
+                                a
+                                good work life balance.Great management
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/fathima.png" alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Fathima S</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>Sr.Software Engineer</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+
+                  <ng-template carouselSlide>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Fulfilled with joy and technical growth.
+                                Good platform for developers with passion. Enjoying the each and
+                                every moments.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/sharth.png" alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Sharath</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>QA Engineer</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+
+                  <ng-template carouselSlide>
+                    <div class="testimonial-slide">
+                      <div class="testimonial_box">
+                        <div class="testimonial_box-inner">
+                          <div class="testimonial_box-top">
+                            <div class="testimonial_box-icon">
+                              <img src="./assets/img/addant-testimonial.png" class="img-fluid">
+                            </div>
+                            <div class="testimonial_box-text">
+                              <p>
+                                <sup><i class="fa-solid fa-quote-left"></i></sup>
+                                Addant is surely a second home, Comfortable working atmosphere,
+                                Company is very supportive for Technical and Personal growth.
+                                <sup><i class="fa-solid fa-quote-right"></i></sup>
+                              </p>
+                            </div>
+                            <div class="testimonial_box-img">
+                              <img src="./assets/img/testtimonialpics/neethu.png" alt="profile">
+                            </div>
+                            <div class="testimonial_box-name">
+                              <h4>Neethu L</h4>
+                            </div>
+                            <div class="testimonial_box-job">
+                              <p>Sr.Software Engineer</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
                 </owl-carousel-o>
               </div>
             </div>
@@ -423,90 +545,13 @@
         Apply
         Now
       </button>
+
+
+      
     </div>
   </div>
 </div>
 
-
-<script>
-  $(document).ready(function () {
-    $('.testimonial-slider').slick({
-      autoplay: true,
-      autoplaySpeed: 800,
-      speed: 600,
-      draggable: true,
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: false,
-
-      responsive: [
-        {
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: false,
-          }
-        },
-        {
-          breakpoint: 575,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            variableWidth: true,
-            arrows: false,
-            dots: false,
-          }
-        },
-
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            arrows: false,
-            dots: false,
-
-          }
-        },
-        {
-          breakpoint: 1030,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 2,
-            infinite: false,
-            arrows: false,
-            dots: false,
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            variableWidth: true,
-            arrows: false,
-            dots: false,
-          }
-        },
-
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            variableWidth: true,
-            arrows: false,
-            dots: false,
-          }
-        }
-      ]
-    });
-  });
-</script>
 
 
 <style>
@@ -520,5 +565,17 @@
     color: #000;
     text-shadow: 0 1px 0 #fff;
     opacity: .5;
+  }
+
+  .owl-nav .ng-star-inserted {
+    display: none !important;
+  }
+  .jobs{
+      padding: 12px;
+  }
+  .accordion-button:not(.collapsed) {
+    color: black !important;
+    background-color: white !important;
+   
   }
 </style>
