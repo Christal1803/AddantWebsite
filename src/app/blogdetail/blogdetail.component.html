@@ -23,7 +23,7 @@
     <h4 class="mb-4"><b>Related Blogs</b></h4>
     <div class="col-sm-6 col-md-6 col-lg-4 solutionmircocard" *ngFor="let b of blog">
 
-      <div class="card card-height" routerLink="/detail/{{b.IdBlog}}">
+      <div class="card card-height" routerLink="/detail/{{b.IdBlog}}" (click)="ngOnInit()">
         <img src="{{b.ConverImgUrl}}" class="card-img-top" alt="...">
         <div class="card-body" routerLink="/detail/{{b.IdBlog}}">
           <div class="user-details">

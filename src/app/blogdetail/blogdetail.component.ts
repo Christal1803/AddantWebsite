@@ -58,4 +58,5 @@ export class BlogdetailComponent implements OnInit {
       }
     })
   }
+ 
 }
