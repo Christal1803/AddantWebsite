@@ -42,61 +42,18 @@
         <div class="container-fluid" data-aos="fade-up">
 
           <div class="row">
-            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1"  *ngFor="let job of position">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1" *ngFor="let job of position; let i = index">
               <div class="accordion-lists">
                 <ul>
                   <li>
-                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">{{job.Name}}<i id="showdown" class="bx bx-chevron-down" onclick="showup()"></i><i id="showup" class="bx bx-chevron-up icon-hide" onclick="showdown()"></i></a>
+                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">{{job.Name}}<i id="showdown" class="bx bx-chevron-down" (click)="showup(job.IdPosition)"></i><i id="showup" class="bx bx-chevron-up icon-hide" onclick="showdown()"></i></a>
                     <div id="accordion-list-1" class="collapse collapse-content" data-bs-parent=".accordion-list">
                       <ul>
-                        <!--*ngFor="let job of position"
-                        {{job.positionDetails.SubHeader}}-->
-                        <p class="mb-2">
-                          <b>Job Description : </b>
-                          Job Description: We are looking for passionate
-                          Senior Software Engineers to join our development
-                          center at Technopark, Trivandrum, Kerala. This
-                          candidate will be focused on delivering cutting-edge
-                          software solutions for our Europe & US-based
-                          clients.
+                        <p class="mb-2" *ngFor="let y of positionDetailDTOs; let i = index" style="white-space:pre-wrap">
+                          <b>{{y.SubHeader}} </b><br />
+                          {{y.SubHeaderContent}}
                         </p>
-                        <p class="mb-2"><b>Responsibilities :</b></p>
-
-                        <li>
-                          This position will focus on designing &
-                          developing software solutions using C#.Net, WCF,
-                          Web API, and MS SQL Server.
-                        </li>
-
-                        <li>
-                          Strong knowledge and understanding of OOD & OOP.
-                        </li>
-
-                        <li>
-                          Good to have knowledge in WPF/XAML.
-                        </li>
-
-                        <li>
-                          Good to have exposure to Agile development
-                          methodology & Scrum framework.
-                        </li>
-
-                        <li>
-                          Good communication skills, analytical and
-                          technical problem-solving skills.
-                        </li>
-
-                        <li>
-                          Passionate to learn new technologies, fast
-                          learner, and able to work with minimal
-                          supervision.
-                        </li>
-
-                        <p class="mt-2">
-                          <b>Min Experience :</b> 4-6 years of
-                          experience
-                        </p>
-                        <button class="applynowbtn" data-bs-toggle="modal" data-bs-target="#FormModal">Apply Now</button>
+                        <button class="applynowbtn" data-bs-toggle="modal" data-bs-target="#FormModal" (click)="applyJob(job.IdPosition)">Apply Now</button>
                       </ul>
                     </div>
                   </li>
@@ -130,8 +87,7 @@
                       <div class="mb-3">
                         <label for="first_name" class="mb-2">First Name:</label>
                         <input type="name" class="form-control" id="first_name" placeholder="Enter firstname"
-                               name="first_name" formControlName="first_name"
-                                 [ngClass]="{ 'is-invalid': currentForm.first_name.touched && currentForm.first_name.invalid}">
+                               name="first_name" formControlName="first_name">
                       </div>
                     </div>
                   </div>
@@ -141,8 +97,7 @@
                         <label for="last_name" class="mb-2">Last Name:</label>
                         <input type="name" class="form-control" id="last_name" placeholder="Enter lastname"
                                name="last_name"
-                               formControlName="last_name"
-                                 [ngClass]="{ 'is-invalid': currentForm.last_name.touched && currentForm.last_name.invalid}">
+                               formControlName="last_name">
                       </div>
                     </div>
                   </div>
@@ -156,8 +111,7 @@
                       <div class="mb-3">
                         <label for="email" class="mb-2">Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email"
-                               name="email" formControlName="email"
-                                 [ngClass]="{ 'is-invalid': currentForm.email.touched && currentForm.email.invalid}">
+                               name="email" formControlName="email">
                       </div>
                     </div>
                   </div>
@@ -167,8 +121,7 @@
                         <label for="mobile" class="mb-2">Mobile:</label>
                         <input type="tel" class="form-control" id="mobile"
                                placeholder="Enter mobile number" name="mobile"
-                               formControlName="mobile"
-                                 [ngClass]="{ 'is-invalid': currentForm.mobile.touched && currentForm.mobile.invalid}">
+                               formControlName="mobile">
                       </div>
                     </div>
                   </div>
@@ -183,8 +136,7 @@
                           Tell us about
                           yourself:
                         </label>
-                        <textarea class="form-control" rows="8" id="comment" name="text" formControlName="Description"
-                                  ></textarea>
+                        <textarea class="form-control" rows="8" id="comment" name="text" maxlength="250" formControlName="Description"></textarea>
                       </div>
                     </div>
                   </div>
@@ -199,8 +151,7 @@
                             Upload your
                             resume:
                           </label><br>
-                          <input type="file" name="myfile" formControlName="ResumeUrl"
-                                   [ngClass]="{ 'is-invalid': currentForm.ResumeUrl.touched && currentForm.ResumeUrl.invalid}"/>
+                          <input type="file" name="myfile" formControlName="resume" />
                         </div>
                       </div>
                     </div>
@@ -214,23 +165,23 @@
                   <div class="col-12">
                     <div class="panel">
                       <!--<div class="alert alert-success  fade show" id="panel" role="alert">
-                        <strong>We have received your application!</strong> we will get back to you
-                        soon.
-                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>-->
+                    <strong>We have received your application!</strong> we will get back to you
+                    soon.
+                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>-->
                       <div class="mb-3">
                         <button type="button" class="btn applybtn" (click)="saveResume()">
                           Submit
                         </button>
 
 
-                        <script>
+                        <!--<script>
                           function myFunction() {
                             document.getElementById("panel").style.display = "none";
                           }
-                        </script>
+                        </script>-->
 
                       </div>
 

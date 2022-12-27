@@ -24,18 +24,18 @@
 
     <div class="col-sm-3 col-md-6 col-lg-4 solutionmircocard" *ngFor="let b of blog">
 
-      <div class="card card-height">
-        <img src="./assets/img/blog/blog1.png" class="card-img-top" alt="...">
+      <div class="card card-height" routerLink="/detail/{{b.IdBlog}}">
+        <img src="{{b.ConverImgUrl}}" class="card-img-top" alt="...">
         <div class="card-body" routerLink="/detail/{{b.IdBlog}}">
           <div class="user-details">
-            <img class="rounded-circle" alt="userimg" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" /> <p class="user-name d-inline ml-2">{{b.CreatedBy}}
-           </p>
+            <img class="rounded-circle" alt="userimg" src="{{b.ProfilePicUrl}}" />
+            <p class="user-name d-inline ml-2">{{b.CreatedBy}}</p>
           </div>
 
           <h6 class="card-title mt-3">{{b.MainHeader}}</h6>
           <p class="user-names d-inline ml-2"> {{b.CreatedOn | date:'medium'}}</p>
 
-          <p class="card-text">The WebRTC conversation, starting as a niche discussion within a few tight-knit circles, has blossomed to a broader...</p>
+          <p class="card-text">{{b.BlogContent |slice:0:100}}</p>
         </div>
       </div>
     </div>

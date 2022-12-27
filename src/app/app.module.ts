@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AboutComponent } from './about/about.component';
-import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BloggComponent } from './blogg/blogg.component';
@@ -32,7 +31,6 @@ import { LoadetailComponent } from './loadetail/loadetail.component';
     HomeComponent,
     ContactComponent,
     AboutComponent,
-    TestComponent,
     BloggComponent,
     BlogdetailComponent,
     CareerComponent,
