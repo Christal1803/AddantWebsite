@@ -19,6 +19,9 @@ import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { CareerComponent } from './career/career.component';
 import { LifeofaddantComponent } from './lifeofaddant/lifeofaddant.component';
 import { LoadetailComponent } from './loadetail/loadetail.component';
+import { LightgalleryModule } from 'lightgallery/angular';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { LoadetailComponent } from './loadetail/loadetail.component';
     CarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LightgalleryModule,
+    NgbAccordionModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

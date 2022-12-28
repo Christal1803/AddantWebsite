@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { BlogService } from '../services/blog.service';
 declare var window: any;
 
@@ -133,5 +134,33 @@ export class CareerComponent implements OnInit {
     });
     this.resumeForm.reset();
     //this.closebutton.nativeElement.click();
+  }
+
+
+  customOptions: OwlOptions = {
+    autoplay: true,
+    autoplaySpeed: 50,
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 7000,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1.5
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 3
+      }
+    },
+    nav: true
   }
 }
