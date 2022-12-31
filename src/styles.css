@@ -1731,12 +1731,12 @@ textarea#exampleFormControlTextarea1 {
   font-size: 12px;
   line-height: 21px;
   color: #ADADAD;
-  margin: 1.2rem;
+
 }
 
   .share-blog .share {
     color: var(--color-primary);
-    font-size: 15px;
+    font-size: 18px;
     padding: 5px;
   }
 
@@ -3844,7 +3844,7 @@ p.footerlinks {
   }
 
   .drop-menu header {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
 
   .nav-links .drop-menu {

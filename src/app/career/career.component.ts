@@ -149,7 +149,7 @@ export class CareerComponent implements OnInit {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1.5
+        items: 1
       },
       400: {
         items: 2

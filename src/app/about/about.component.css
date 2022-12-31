@@ -1419,8 +1419,8 @@ video::-webkit-media-text-track-display {
     width: 345px;
     margin: 20px 0px;
   }
-  .aboutus-heading {
-      margin-top: 2rem;
+  .aboutus-content {
+    margin-top: 2rem;
   }
 
 }

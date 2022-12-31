@@ -21,6 +21,9 @@ import { LifeofaddantComponent } from './lifeofaddant/lifeofaddant.component';
 import { LoadetailComponent } from './loadetail/loadetail.component';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { ExperticeComponent } from './expertice/expertice.component';
+import { InstagramDOMService } from './instagram-dom.service';
 
 
 
@@ -38,7 +41,9 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
     BlogdetailComponent,
     CareerComponent,
     LifeofaddantComponent,
-    LoadetailComponent
+    LoadetailComponent,
+    ScrollTopComponent,
+    ExperticeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +55,11 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     HttpClientModule,
     LightgalleryModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+
+
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, InstagramDOMService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
