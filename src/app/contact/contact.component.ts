@@ -42,6 +42,7 @@ export class ContactComponent implements OnInit {
       Mobile: this.enquiryForm.controls['mobile'].value,
       Subject: this.enquiryForm.controls['subject'].value,
       Message: this.enquiryForm.controls['message'].value,
+     
 
     }
     this._apiService.saveEnquiry(enquiryBody).subscribe((response: any) => {
