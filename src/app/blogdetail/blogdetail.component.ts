@@ -51,6 +51,14 @@ export class BlogdetailComponent implements OnInit {
         this.BlogContent = this.blogdetail.BlogContent;
       }
     })
+
+
+
+
+
+ 
+
+
     this._apiService.getBlogDetail().subscribe((response: any) => {
       if (response) {
         this.blog = response;
@@ -59,4 +67,32 @@ export class BlogdetailComponent implements OnInit {
     })
   }
  
+
+
+  name!: string;
+
+  /* To copy Text from Textbox */
+  copyInputMessage(inputElement: { select: () => void; setSelectionRange: (arg0: number, arg1: number) => void; }) {
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
+  }
+
+  /* To copy any Text */
+  copyText(val: string) {
+    let selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
 }
+
+
+

@@ -1,0 +1,12 @@
+.button-scroll-to-top {
+  position: fixed;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  z-index: 1030;
+  right: 30px;
+  bottom: 30px;
+}
+
+.button-scroll-to-top--show {
+  opacity: 1;
+}

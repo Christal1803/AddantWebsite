@@ -5,3 +5,9 @@
 .gallery-item {
   margin: 5px;
 }
+.col-sm-4 {
+  padding: 0 !important;
+}
+nav.navbar-expand-lg.navbar-dark.fixed-top[_ngcontent-qfa-c130] {
+  background: #fff !important;
+}

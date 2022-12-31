@@ -6,12 +6,14 @@ import { BloggComponent } from './blogg/blogg.component';
 import { CareerComponent } from './career/career.component';
 import { ContactComponent } from './contact/contact.component';
 import { CookiesComponent } from './cookies/cookies.component';
+import { ExperticeComponent } from './expertice/expertice.component';
 import { ExpertiseRoutingModule } from './expertise/expertise-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LifeofaddantComponent } from './lifeofaddant/lifeofaddant.component';
 import { LoadetailComponent } from './loadetail/loadetail.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { SolutionsRoutingModule } from './solutions/solutions-routing.module';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,8 +28,8 @@ const routes: Routes = [
   { path: 'privacy', component: PrivacyComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'aboutus', component: AboutComponent },
- 
+  { path: 'aboutus', component: AboutComponent }, 
+  { path: 'expertisee', component: ExperticeComponent },
 ];
 
 @NgModule({

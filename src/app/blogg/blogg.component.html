@@ -25,14 +25,14 @@
     <div class="col-sm-3 col-md-6 col-lg-4 solutionmircocard" *ngFor="let b of blog">
 
       <div class="card card-height" routerLink="/detail/{{b.IdBlog}}">
-        <img src="{{b.ConverImgUrl}}" class="card-img-top" alt="...">
+        <img src="{{b.ConverImgUrl}}" class="card-img-top blog-card-img" alt="...">
         <div class="card-body" routerLink="/detail/{{b.IdBlog}}">
           <div class="user-details">
             <img class="rounded-circle" alt="userimg" src="{{b.ProfilePicUrl}}" />
             <p class="user-name d-inline ml-2">{{b.CreatedBy}}</p>
           </div>
 
-          <h6 class="card-title mt-3">{{b.MainHeader}}</h6>
+          <h6 class="card-title mt-3">{{b.MainHeader |slice:0:52}}</h6>
           <p class="user-names d-inline ml-2"> {{b.CreatedOn | date:'medium'}}</p>
 
           <p class="card-text">{{b.BlogContent |slice:0:100}}</p>

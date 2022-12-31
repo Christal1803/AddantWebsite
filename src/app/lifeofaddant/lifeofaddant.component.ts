@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InstagramDOMService } from '../instagram-dom.service';
 
 @Component({
   selector: 'app-lifeofaddant',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LifeofaddantComponent implements OnInit {
 
-  constructor() { }
+  constructor(private instagram: InstagramDOMService) { }
 
   ngOnInit(): void {
+    this.instagram.processEmbeddedInstagramPosts();
   }
 
 }
