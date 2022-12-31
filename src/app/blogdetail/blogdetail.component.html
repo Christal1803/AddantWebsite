@@ -4,34 +4,34 @@
       <h1 class="blog-title"><b>{{MainHeader}}</b></h1>
 
       <div class="user-details">
-
         <img src="{{ProfilePicUrl}}" alt="Profile" class="rounded-circle" />
         <p class="user-name d-inline ml-2">{{CreatedBy}} </p> <p class="upload-time d-inline ml-2">{{CreatedOn |date}} . {{MinReadTime}} min read</p>
-        <p class="share-blog">Share to : <i class="share fa-solid fa-link clipboard"></i> <i class="share fa-brands fa-facebook ml-2"></i><i class="share fa-brands fa-linkedin ml-2"></i></p>
+        <p class="share-blog">Share to : <button class="share-btn" tooltip="URL Copied" (click)="copyText('https://addant.com/detail/{{b.IdBlog}}')"><i class="share fa-solid fa-link clipboard"></i></button> <button class="share-btn"><a href="https://www.facebook.com/sharer/sharer.php?u=https://addant.com/detail&amp;src=sdkpreparse" target="_blank"><i class="share fa-brands fa-facebook ml-2"></i></a></button><button class="share-btn"><a href="https://www.linkedin.com/sharing/share-offsite/?url=http://addantwebsite-001-site1.htempurl.com/detail/1014" target="_blank"><i class="share fa-brands fa-linkedin ml-2"></i></a></button></p>
       </div>
+
       <div class="banner_blog">
         <img src="{{BannerImgUrl}}" class="blog-image">
-
       </div>
     </div>
-    <div class="col-12 blogcontent" style="white-space:pre-wrap">
-      {{BlogContent}}
 
+    <div class="col-12 blogcontent mt-4" style="white-space:pre-wrap">
+      {{BlogContent}}
     </div>
 
 
     <h4 class="mb-4"><b>Related Blogs</b></h4>
+
     <div class="col-sm-6 col-md-6 col-lg-4 solutionmircocard" *ngFor="let b of blog">
 
       <div class="card card-height" routerLink="/detail/{{b.IdBlog}}" (click)="ngOnInit()">
-        <img src="{{b.ConverImgUrl}}" class="card-img-top" alt="...">
+        <img src="{{b.ConverImgUrl}}" class="card-img-top blog-card-img" alt="...">
         <div class="card-body" routerLink="/detail/{{b.IdBlog}}">
           <div class="user-details">
             <img class="rounded-circle" alt="userimg" src="{{b.ProfilePicUrl}}" />
             <p class="user-name d-inline ml-2">{{b.CreatedBy}}</p>
           </div>
 
-          <h6 class="card-title mt-3">{{b.MainHeader}}</h6>
+          <h6 class="card-title mt-3">{{b.MainHeader |slice:0:52}}</h6>
           <p class="user-names d-inline ml-2"> {{b.CreatedOn | date:'medium'}}</p>
 
           <p class="card-text">{{b.BlogContent |slice:0:100}}</p>
@@ -40,52 +40,45 @@
     </div>
 
 
-
-
-    <!--<div class="col-sm-6 col-md-6 col-lg-6 solutionmircocard">
-
-    <div class="card">
-      <img src="./assets/img/blog/blog2.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <div class="user-details">
-          <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" /> <p class="user-name d-inline ml-2">Addant Admin .</p> <p class="upload-time d-inline ml-2"> 10 min read</p>
-        </div>
-        <h6 class="card-title mt-3">WebRTC Real-time Communication</h6>
-        <p class="card-text">Real-time communication without plugins Imagine a world where your phone, TV and computer could all communicate...</p>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-sm-6 col-md-6 col-lg-6 solutionmircocard">
-
-    <div class="card">
-      <img src="./assets/img/blog/blog3.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <div class="user-details">
-          <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" /> <p class="user-name d-inline ml-2">Addant Admin .</p> <p class="upload-time d-inline ml-2"> 10 min read</p>
-        </div>
-
-        <h6 class="card-title  mt-3">Around Me in a City</h6>
-
-        <p class="card-text">Whenever you go in any City, one most common thing that you have in your mind is to find your favorite restaurant/fast...</p>
-      </div>
-    </div>
-  </div>-->
-
   </div>
 </div>
 
-<script>
-  var $temp = $("<input>");
-  var $url = $(location).attr('href');
 
-  $('.clipboard').on('click', function () {
-    $("body").append($temp);
-    $temp.val($url).select();
-    document.execCommand("copy");
-    $temp.remove();
-    $("p").text("URL copied!");
-  })
-</script>
+  
+
+      <style>
+        *[tooltip]:focus:after {
+          content: attr(tooltip);
+          display: block;
+          position: absolute;
+          background: #0ec79b;
+          color: white;
+          padding: 4px 8px;
+          border-radius: 4px;
+          
+         
+        }
+        .blog-image {
+          width: 100%;
+        }
+
+        .blog-card-img {
+          height: auto;
+          width: auto;
+          max-height: 200px;
+        }
+
+        .card-height {
+          height: 450px;
+        }
+
+        button.share-btn {
+          border: 0;
+          background: #fff;
+        }
+        .blog-title {
+          text-align: left;
+          margin: 30px 0px !important;
+        }
+      </style>
 

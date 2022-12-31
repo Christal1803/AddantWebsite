@@ -49,10 +49,11 @@
               <ngb-accordion [closeOthers]="true"  (click)="showup(job.IdPosition)">
                 <ngb-panel id="static-1" title="{{job.Name}}">
                   <ng-template ngbPanelContent>
-                    <ul>
-                      <p class="mb-2" *ngFor="let y of positionDetailDTOs; let i = index" style="white-space:pre-wrap">
-                        <b>{{y.SubHeader}} </b><br />
-                        {{y.SubHeaderContent}}
+                    <ul class="jobul">
+                      <p *ngFor="let y of positionDetailDTOs; let i = index" style="white-space:pre-wrap;margin: 0;">
+                        <br />
+                        <b>{{y.SubHeader}} </b><br><br>
+                        <span>{{y.SubHeaderContent}}</span>
                       </p>
                       <button class="applynowbtn" data-bs-toggle="modal" data-bs-target="#FormModal" (click)="applyJob(job.IdPosition)">Apply Now</button>
                     </ul>
@@ -577,5 +578,20 @@
     color: black !important;
     background-color: white !important;
    
+  }
+
+  button.accordion-button.ng-star-inserted {
+    color: black !important;
+    background: white !important;
+  }
+
+  .accordion-item.ng-star-inserted {
+    border: 0 !important;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .jobul {
+      padding: 0px;
+    }
   }
 </style>
