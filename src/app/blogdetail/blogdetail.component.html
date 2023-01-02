@@ -6,7 +6,9 @@
       <div class="user-details">
         <img src="{{ProfilePicUrl}}" alt="Profile" class="rounded-circle" />
         <p class="user-name d-inline ml-2">{{CreatedBy}} </p> <p class="upload-time d-inline ml-2">{{CreatedOn |date}} . {{MinReadTime}} min read</p>
-        <p class="share-blog">Share to : <button class="share-btn" tooltip="URL Copied" (click)="copyText('https://addant.com/detail/{{b.IdBlog}}')"><i class="share fa-solid fa-link clipboard"></i></button> <button class="share-btn"><a href="https://www.facebook.com/sharer/sharer.php?u=https://addant.com/detail&amp;src=sdkpreparse" target="_blank"><i class="share fa-brands fa-facebook ml-2"></i></a></button><button class="share-btn"><a href="https://www.linkedin.com/sharing/share-offsite/?url=http://addantwebsite-001-site1.htempurl.com/detail/1014" target="_blank"><i class="share fa-brands fa-linkedin ml-2"></i></a></button></p>
+        <p class="share-blog">Share to : <button class="share-btn" tooltip="URL Copied" (click)="copyText(IdBlog)"><i class="share fa-solid fa-link clipboard"></i></button>
+        <button class="share-btn" (click)="shareFb(IdBlog)"><a href={{fbLink}} target="_blank"><i class="share fa-brands fa-facebook ml-2"></i></a></button>
+        <button class="share-btn"  (click)="shareLinked(IdBlog)"><a href={{linkedinLink}} target="_blank"><i class="share fa-brands fa-linkedin ml-2"></i></a></button></p>
       </div>
 
       <div class="banner_blog">

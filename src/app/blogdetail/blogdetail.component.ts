@@ -21,6 +21,9 @@ export class BlogdetailComponent implements OnInit {
   public MinReadTime: any;
   public BannerImgUrl: any;
   public BlogContent: any;
+  public IdBlog: any;
+  public fbLink: any;
+  public linkedinLink: any;
 
   constructor(private _apiService: BlogService, private Activatedroute: ActivatedRoute,
     private router: Router) { }
@@ -49,15 +52,9 @@ export class BlogdetailComponent implements OnInit {
         this.MinReadTime = this.blogdetail.MinReadTime;
         this.BannerImgUrl = this.blogdetail.BannerImgUrl;
         this.BlogContent = this.blogdetail.BlogContent;
+        this.IdBlog = this.blogdetail.IdBlog;
       }
     })
-
-
-
-
-
- 
-
 
     this._apiService.getBlogDetail().subscribe((response: any) => {
       if (response) {
@@ -79,19 +76,33 @@ export class BlogdetailComponent implements OnInit {
   }
 
   /* To copy any Text */
-  copyText(val: string) {
+  copyText(val: any) {
     let selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = val;
+    selBox.value = 'https://addant.com/detail/'+ val;
+    console.log(selBox.value);
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+    
   }
+
+  shareFb(val:any) {
+    this.fbLink = 'https://www.facebook.com/sharer/sharer.php?u=https://addant.com/detail/' + val;
+
+  }
+  shareLinked(val: any){ 
+    this.linkedinLink = 'https://www.linkedin.com/sharing/share-offsite/?url=http://addantwebsite-001-site1.htempurl.com/detail/' + val;
+  }
+
+
+
+
 }
 
 
