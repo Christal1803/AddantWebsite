@@ -39,7 +39,7 @@ export class CareerComponent implements OnInit {
   }
 
   getPosition() {
-    this._apiService.getPositionDetail().subscribe((response: any) => {
+    this._apiService.getPositionDetail('false').subscribe((response: any) => {
       if (response) {
         this.position = response;
 
@@ -66,6 +66,21 @@ export class CareerComponent implements OnInit {
     debugger
     this.idPosition = idJob;
     console.log(this.idPosition)
+    if (idJob == 'Others') {
+      console.log("hi")
+      this._apiService.getPositionDetail('true').subscribe((response: any) => {
+        if (response) {
+          this.position = response;
+
+          console.log(this.position);
+          var finda = this.position.filter((x: { Name: any; }) => x.Name =='Others');
+          console.log(finda)
+          this.idPosition = finda[0].IdPosition;
+          console.log(this.idPosition)
+
+        }
+      })
+    }
   }
 
   selectResume(event: any) {
