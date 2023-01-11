@@ -1,0 +1,151 @@
+span {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid #CFD4DA;
+  color: #3e4b58;
+  margin: 0 1rem 0 0rem;
+  font-size: 16px;
+}
+
+button {
+  color: #0ec79b;
+  background: #fff;
+  border: 0;
+  box-shadow: 0px 4.37056px 34.9645px rgb(0 0 0 / 6%);
+  padding: 11px;
+}
+
+.active {
+  border-bottom-color: #0ec79b !important;
+}
+
+.tab-content {
+  margin: 30px 0px;
+}
+
+ul#myTab {
+  border: 0;
+}
+
+.banner-align {
+  margin: 25px 100px;
+}
+
+.nav-tabs .nav-link:hover {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+#tab-nav {
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.nav-tabs .nav-link {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid #CFD4DA;
+  color: #3e4b58;
+  margin: 0 1rem 0 1rem;
+  /* padding: 0 0 0.2rem 0; */
+  font-size: 18px;
+}
+
+  .nav-tabs .nav-link.active {
+    border-bottom-color: #0ec79b !important;
+  }
+
+@media (max-device-width: 820px) {
+  .banner-align {
+    margin: 0px 20px;
+  }
+
+  .tabs-container {
+    display: none;
+  }
+
+  .dropdown-item .nav-link {
+    border: none !important;
+    padding: 6px;
+    text-align: center;
+  }
+
+  .btn-group {
+    display: block !important;
+  }
+}
+
+.btn-group {
+  display: none;
+}
+
+.btn:focus {
+  outline: 0 !important;
+}
+
+.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
+  background: #fff !important;
+  color: #0ec79b !important;
+}
+
+
+span {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid #CFD4DA;
+  color: #3e4b58;
+  margin: 0 1rem 0 0rem;
+  font-size: 16px;
+}
+
+.active {
+  border-bottom-color: #0ec79b !important;
+}
+
+.tab-content {
+  margin: 30px 0px;
+}
+
+ul#myTab {
+  border: 0;
+}
+
+.banner-align {
+  margin: 25px 100px;
+}
+
+.nav-tabs .nav-link:hover {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+#tab-nav {
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.nav-tabs .nav-link {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid #CFD4DA;
+  color: #3e4b58;
+  margin: 0 1rem 0 1rem;
+  /* padding: 0 0 0.2rem 0; */
+  font-size: 18px;
+}
+
+  .nav-tabs .nav-link.active {
+    border-bottom-color: #0ec79b !important;
+  }
+
+@media (max-device-width: 767px) {
+  .banner-align {
+    margin: 0px 20px;
+  }
+}

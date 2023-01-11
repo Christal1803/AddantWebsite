@@ -1,1 +1,33 @@
+*[tooltip]:focus:after {
+  content: attr(tooltip);
+  display: block;
+  position: absolute;
+  background: #0ec79b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
 
+.blog-image {
+  width: 100%;
+  max-height: 500px;
+}
+
+.blog-card-img {
+  width: auto;
+  height: 200px;
+}
+
+.card-height {
+  height: 450px;
+}
+
+button.share-btn {
+  border: 0;
+  background: #fff;
+}
+
+.blog-title {
+  text-align: left;
+  margin: 30px 0px !important;
+}

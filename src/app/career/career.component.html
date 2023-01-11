@@ -41,12 +41,12 @@
       <section id="career" class="career section-bg carrer-collapse mt-4 mb-4 careerpage-li">
         <div class="container-fluid" data-aos="fade-up">
           <div class="row" *ngIf="position.length==0">
-            <p>No jobs here</p>
+            <p class="m-0 p-3">Currently no job openings</p>
           </div>
           <div class="row">
             <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1 jobs" *ngFor="let job of position; let i = index">
 
-              <ngb-accordion [closeOthers]="true"  (click)="showup(job.IdPosition)">
+              <ngb-accordion [closeOthers]="true" (click)="showup(job.IdPosition)">
                 <ngb-panel id="static-1" title="{{job.Name}}">
                   <ng-template ngbPanelContent>
                     <ul class="jobul">
@@ -59,16 +59,14 @@
                     </ul>
                   </ng-template>
                 </ngb-panel>
-                
+
               </ngb-accordion>
-
-
               <!--<div class="accordion-lists">
                 <ul>
                   <li>
                     <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">{{job.Name}}<i id="showdown" class="bx bx-chevron-down" (click)="showup(job.IdPosition)"></i><i id="showup" class="bx bx-chevron-up icon-hide" onclick="showdown()"></i></a>
                     <div id="accordion-list-1" class="collapse collapse-content" data-bs-parent=".accordion-list">
-                      
+
                     </div>
                   </li>
                 </ul>
@@ -85,8 +83,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h6 class="modal-title" id="exampleModalLabel">
-                <img src="assets/img/favicon.png" style="height: 25px;width: 25px;" class="mr-2">Fill the
-                details
+                <img src="assets/img/favicon.png" style="height: 25px;width: 25px;" class="mr-2"><span class="filldetail">Fill the details</span>
               </h6>
               <button type="button" class="close modal-close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" style=" color: black;">&times;</span>
@@ -169,8 +166,8 @@
                             Upload your
                             resume:
                           </label><br>
-                                  <input type="file" name="myfile" formControlName="ResumeUrl" (change)="selectResume($event)"
-                                         [ngClass]="{ 'is-invalid': currentForm.ResumeUrl.touched && currentForm.ResumeUrl.invalid}" />
+                          <input type="file" name="myfile" formControlName="ResumeUrl" (change)="selectResume($event)"
+                                 [ngClass]="{ 'is-invalid': currentForm.ResumeUrl.touched && currentForm.ResumeUrl.invalid}" />
                         </div>
                       </div>
                     </div>
@@ -184,12 +181,12 @@
                   <div class="col-12">
                     <div class="panel">
                       <!--<div class="alert alert-success  fade show" id="panel" role="alert">
-                    <strong>We have received your application!</strong> we will get back to you
-                    soon.
-                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>-->
+                        <strong>We have received your application!</strong> we will get back to you
+                        soon.
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>-->
                       <div class="mb-3">
                         <button type="button" class="btn applybtn" (click)="saveResume()">
                           Submit
@@ -258,7 +255,7 @@
                       </div>
                     </div>
                   </ng-template>
-                 
+
                   <ng-template carouselSlide>
                     <div class="testimonial-slide">
                       <div class="testimonial_box">
@@ -290,7 +287,7 @@
                       </div>
                     </div>
                   </ng-template>
-                  
+
                   <ng-template carouselSlide>
                     <div class="testimonial-slide">
                       <div class="testimonial_box">
@@ -325,7 +322,7 @@
                       </div>
                     </div>
                   </ng-template>
-                 
+
                   <ng-template carouselSlide>
                     <div class="testimonial-slide">
                       <div class="testimonial_box">
@@ -359,7 +356,7 @@
                       </div>
                     </div>
                   </ng-template>
-                 
+
                   <ng-template carouselSlide>
                     <div class="testimonial-slide">
                       <div class="testimonial_box">
@@ -392,7 +389,7 @@
                       </div>
                     </div>
                   </ng-template>
-                  
+
                   <ng-template carouselSlide>
                     <div class="testimonial-slide">
                       <div class="testimonial_box">
@@ -424,7 +421,7 @@
                       </div>
                     </div>
                   </ng-template>
-                  
+
 
                   <ng-template carouselSlide>
                     <div class="testimonial-slide">
@@ -548,50 +545,8 @@
       </button>
 
 
-      
+
     </div>
   </div>
 </div>
 
-
-
-<style>
-  button.close {
-    background-color: transparent;
-    border: 0;
-    float: right;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: .5;
-  }
-
-  .owl-nav .ng-star-inserted {
-    display: none !important;
-  }
-  .jobs{
-      padding: 12px;
-  }
-  .accordion-button:not(.collapsed) {
-    color: black !important;
-    background-color: white !important;
-   
-  }
-
-  button.accordion-button.ng-star-inserted {
-    color: black !important;
-    background: white !important;
-  }
-
-  .accordion-item.ng-star-inserted {
-    border: 0 !important;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .jobul {
-      padding: 0px;
-    }
-  }
-</style>

@@ -1362,7 +1362,6 @@ ul:hover .top-sphere {
   background-image: url(assets/img/contact/contactbg.svg);
   padding: 0px 100px;
   margin-top: 8rem !important;
-  margin-bottom: 4rem;
 }
 
 .contact-details {
@@ -1572,7 +1571,7 @@ textarea#exampleFormControlTextarea1 {
   margin-bottom: 14px;
 }
 
-.tabs-container {
+/*.tabs-container {
   margin-top: 4.5rem !important;
 }
 
@@ -1593,9 +1592,9 @@ textarea#exampleFormControlTextarea1 {
   color: #727272;
   border-top: 1px solid #eee;
   margin-left: -10px;
-  margin-right: -10px;
+  margin-right: -10px;*/
   /* padding-left: 25px; */
-}
+/*}
 
 .tabs-container nav ul li:hover {
   color: #3e4b58;
@@ -1671,7 +1670,7 @@ textarea#exampleFormControlTextarea1 {
 
 .tab-content.current {
   display: inherit;
-}
+}*/
 
 .ExpertiseBanner {
   background-image: url("assets/img/Expertise/ExpertiseBanner.png");
@@ -3461,7 +3460,7 @@ p.footerlinks {
   }
 
   .cardsbanner {
-    margin: 0px -17px !important;
+    margin: 32px 10px !important;
   }
 }
 
@@ -3485,7 +3484,7 @@ p.footerlinks {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .headings {
     position: absolute;
-    top: 7%;
+    top: 14%;
   }
 
   h1.text-white {
@@ -3701,23 +3700,14 @@ p.footerlinks {
   .tabs-container nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     overflow: hidden;
     border: none;
     padding: 0;
   }
 
-    .tabs-container nav ul li {
-      display: inline-block;
-      margin: 0 1rem 0 1rem;
-      /* padding: 0 0 .2rem 0; */
-      font-size: 18px;
-      border: none;
-      padding-bottom: 8px;
-      border-bottom-style: solid !important;
-      border-bottom-color: #CFD4DA !important;
-    }
+   
 
       .tabs-container nav ul li:not(.active) {
         position: relative;
@@ -3929,7 +3919,7 @@ p.footerlinks {
 
   .headings {
     position: absolute;
-    top: 25%;
+    top: 14%;
   }
 }
 
@@ -4062,7 +4052,7 @@ p.footerlinks {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 820px) {
   img.smartcitybanner.mt-auto {
     height: 38vh;
   }

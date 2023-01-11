@@ -16,3 +16,8 @@ nav.navbar-expand-lg.navbar-dark.fixed-top {
 a.seeall {
   color: #0ec79b !important;
 }
+
+.desktop-item a {
+  color: #fff;
+  text-decoration: none;
+}

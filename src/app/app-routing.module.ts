@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'details/:id', component: LoadetailComponent },
   //{ path: 'funday', component: LoadetailComponent },
   { path: 'solutions', loadChildren: () => SolutionsRoutingModule },
+  { path: 'expertise', loadChildren: () => ExpertiseRoutingModule },
   { path: 'careers', component: CareerComponent },
   { path: 'expertise', loadChildren: () => ExpertiseRoutingModule },
   { path: 'cookies', component: CookiesComponent },

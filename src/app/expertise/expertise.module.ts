@@ -9,6 +9,7 @@ import { DatascienceandengineeringComponent } from './datascienceandengineering/
 import { KisoktouchscreenComponent } from './kisoktouchscreen/kisoktouchscreen.component';
 import { MobileapplicationsComponent } from './mobileapplications/mobileapplications.component';
 import { WebapplicationsComponent } from './webapplications/webapplications.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 
@@ -25,6 +26,7 @@ import { WebapplicationsComponent } from './webapplications/webapplications.comp
   imports: [
     CommonModule,
     ExpertiseRoutingModule,
+    TabsModule.forRoot()
 
   ]
 })

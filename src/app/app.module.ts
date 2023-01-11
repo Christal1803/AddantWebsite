@@ -24,7 +24,9 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { ExperticeComponent } from './expertice/expertice.component';
 import { InstagramDOMService } from './instagram-dom.service';
-
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule } from 'ng-gallery/lightbox';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 @NgModule({
@@ -56,6 +58,11 @@ import { InstagramDOMService } from './instagram-dom.service';
     HttpClientModule,
     LightgalleryModule,
     NgbAccordionModule,
+    GalleryModule.withConfig({
+      // thumbView: 'contain',
+    }),
+    LightboxModule,
+    TabsModule.forRoot()
 
 
   ],
