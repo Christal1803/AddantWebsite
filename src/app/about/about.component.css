@@ -40,6 +40,43 @@
   margin: 20px;
 }
 
+.about-card {
+  padding: 0px 50px;
+}
+
+.box {
+  padding: 20px 20px;
+  font-size: 32px;
+  font-weight: bold;
+  background: #dbdfe5;
+  height: 305px;
+  background: url(assets/img/aboutus-card.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 2px;
+  box-shadow: 0 6px 31px -2px rgb(0 0 0 / 10%);
+  margin: 20px 0px;
+}
+
+@media only screen and (device-width: 820px), only screen and (max-width: 820px) {
+  .about-card {
+    padding: 0;
+  }
+
+  .box {
+    padding: 0px 20px;
+    margin: 15px 0px;
+  }
+}
+
+.aboutus-card {
+  height: 305px;
+  background: url("assets/img/aboutus-card.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 2px;
+  box-shadow: 0 6px 31px -2px rgb(0 0 0 / 10%);
+}
 
 
 .video-js .vjs-big-play-button:before,
@@ -1407,7 +1444,7 @@ video::-webkit-media-text-track-display {
   z-index: 1;
 }
 
-@media only screen and (device-width: 768px), only screen and (max-width: 768px) {
+@media only screen and (device-width: 820px), only screen and (max-width: 820px) {
   .first {
       order: 2;
   }

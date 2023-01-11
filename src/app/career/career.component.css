@@ -1,3 +1,71 @@
+::ng-deep .accordion-item:last-of-type {
+  border: none !important;
+}
+button.close {
+  background-color: transparent;
+  border: 0;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+
+.owl-nav .ng-star-inserted {
+  display: none !important;
+}
+
+.jobs {
+  padding: 12px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black !important;
+  background-color: white !important;
+}
+
+button.accordion-button.ng-star-inserted {
+  color: black !important;
+  background: white !important;
+}
+
+.accordion-item.ng-star-inserted {
+  border: 0 !important;
+}
+
+.filldetail {
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 820px) {
+  .jobul {
+    padding: 0px;
+  }
+
+  .carrer-mainsection {
+    padding: 0px 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .jobs {
+    padding: 12px 0px;
+  }
+
+  .carrer-collapse {
+    background: #fff;
+  }
+
+  ::ng-deep .accordion-button {
+    background: #f8f8f8 !important;
+  }
+}
+
+::ng-deep .owl-theme .owl-nav [class*=owl-] {
+  display: none !important;
+}
 @media only screen and (max-width: 480px) {
   :host ::ng-deep .owl-item {
     padding: 0.6rem !important;

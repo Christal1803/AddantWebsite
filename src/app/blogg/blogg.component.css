@@ -1,7 +1,5 @@
-.blog-card-img {
-  height: auto;
-  width: auto;
-  max-height: 200px;
+img.card-img-top.blog-card-img {
+  height: 200px;
 }
 .card-height {
   height: 450px;

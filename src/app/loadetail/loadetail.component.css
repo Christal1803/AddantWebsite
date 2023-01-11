@@ -1,13 +1,229 @@
 
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css');
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-zoom.css');
 
-.gallery-item {
-  margin: 5px;
+::ng-deep .g-btn-close {
+  position: absolute;
+  right: 0.9em;
+  top: 1.9em;
+  z-index: 60;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
+
+.img-container:hover .img-caption {
+  display: block;
+}
+
+
+.img-caption {
+  text-align: center;
+  font-family: 'Marck Script', cursive;
+  display: none;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1007px) {
+  .main-img {
+    height: 210px !important;
+  }
+}
+
+
+
+@media only screen and (min-width: 1030px) and (max-width: 1366px) {
+  .img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem;
+    /* max-width: 100%; */
+    height: 240px;
+    width: 380px;
+  }
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.375rem;
+  /* max-width: 100%; */
+  height: 300px;
+  width: 380px;
+}
+
+.gallery-image {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+  .gallery-image img {
+    height: 250px;
+    width: 350px;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+  }
+
+.img-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+  position: relative;
+  background-color: white;
+}
+
+.caption {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  opacity: 0.0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+  height: 250px;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.img-box:hover img {
+  transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
+}
+
+.img-box:hover {
+  cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+  font-size: 0.8em;
+}
+
+.opacity-low {
+  opacity: 0.5;
+}
+
+
+
+img.img-fluid {
+  margin: 15px;
+}
+
+.section-heading {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+  align-items: center;
+  color: #424242;
+}
+
+.section-para {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  align-items: center;
+  color: #8C8C8C;
+}
+
+.large-img {
+  display: inline;
+  margin-top: 25px;
+}
+
+.small-img {
+  display: inline;
+  margin-top: 25px;
+}
+
 .col-sm-4 {
   padding: 0 !important;
 }
-nav.navbar-expand-lg.navbar-dark.fixed-top[_ngcontent-qfa-c130] {
-  background: #fff !important;
+
+
+
+.basic-container {
+  padding: 5px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+
+
+.gallery img {
+  width: 500px;
+  object-fit: cover;
+  margin: 5px;
+  height: 200px;
+}
+
+.g-overlay {
+  min-width: 320px;
+}
+
+gallery {
+  font-size: 16px;
+}
+
+
+
+.smartcitybanner {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+
+::ng-deep .fullscreen lightbox {
+  top: 50px !important;
+}
+
+::ng-deep .g-counter {
+  top: 14px !important;
+}
+
+::ng-deep gallery-thumb {
+  display: none !important;
+}
+
+@media (max-device-width: 767px) {
+  ::ng-deep .fullscreen lightbox {
+    top: 60px !important;
+  }
+}
+
+@media (max-device-width: 1024px) {
+  img.img-fluid {
+    margin: 15px 0px;
+    width: 100%;
+  }
+}
+
+::ng-deep img.g-image-item {
+  object-fit: contain !important;
 }

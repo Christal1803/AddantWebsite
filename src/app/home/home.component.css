@@ -343,3 +343,7 @@ nav {
     margin-left: -80px;
   }
 }
+
+::ng-deep .owl-theme .owl-nav [class*=owl-] {
+  display: none !important;
+}
